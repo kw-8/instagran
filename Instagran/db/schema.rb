@@ -33,13 +33,6 @@ ActiveRecord::Schema.define(version: 2021_11_19_225308) do
     t.index ["liker_id", "post_id"], name: "index_likes_on_liker_id_and_post_id", unique: true
   end
 
-  create_table "pictures", force: :cascade do |t|
-    t.integer "post_id", null: false
-    t.text "picture_url", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.integer "poster_id", null: false
     t.text "description"
@@ -52,8 +45,6 @@ ActiveRecord::Schema.define(version: 2021_11_19_225308) do
     t.string "username", null: false
     t.string "password_digest", null: false
     t.string "session_token", null: false
-    t.text "profile_picture_url", null: false
-    t.text "header_picture_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["session_token"], name: "index_users_on_session_token"
