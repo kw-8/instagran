@@ -5,11 +5,10 @@ export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 
 const receiveCurrentUser = user => ({
   type: RECEIVE_CURRENT_USER,
-  currentUser
+  user
 })
 const logoutCurrentUser = () => ({
-  type: LOGOUT_CURRENT_USER,
-  currentUser
+  type: LOGOUT_CURRENT_USER
 })
 
 // user from the form
