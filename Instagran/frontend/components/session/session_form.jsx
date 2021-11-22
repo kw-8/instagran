@@ -24,11 +24,11 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <h3>{this.props.formType}</h3>
         <form>
           <label>Username
-            <input type="text" id="username" />
+            <input type="text" id="username"/>
           </label>
           <label>Password
             <input type="password" id="password" />
@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
         <p>Have an account?
           <Link to="#"></Link>
         </p>
-      </div>
+      </>
     )
   }
 }
