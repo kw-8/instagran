@@ -8,11 +8,17 @@ class SessionForm extends React.Component {
       username: "",
       password: ""
     };
+
+    this.state = props.user;
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
   }
 
   update(field) {
     return (e) => {
-      this.setState({ [field]: e.target.value });
+      this.setState({
+        [field]: e.target.value
+      });
     }
   }
 
@@ -23,22 +29,16 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    const Inputs = this.props.inputs;
     return (
       <>
         <h3>{this.props.formType}</h3>
         <form>
-          <label>Username
-            <input type="text" id="username"/>
-          </label>
-          <label>Password
-            <input type="password" id="password" />
-          </label>
+          <Inputs update={this.update} handleSubmit={this.handleSubmit}/>
         </form>
-        <Link to="#">something</Link>
-        <p>Have an account?
-          <Link to="#"></Link>
-        </p>
       </>
     )
   }
 }
+
+export default SessionForm;
