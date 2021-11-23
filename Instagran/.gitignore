@@ -71,7 +71,6 @@ yarn-debug.log*
 .DS_store
 
 **/bundle*
-Gemfile.lock
 package-lock.json
 
 node_modules/
