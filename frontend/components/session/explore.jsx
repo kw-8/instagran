@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class Explore extends React.Component {
-  constructor(props) { }
+  constructor(props) {
+    super(props)
+  }
   render() {
     return (
-      <p>explore</p>
+      <div id="explore">explore</div>
     )
   }
 }

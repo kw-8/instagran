@@ -14,14 +14,10 @@ import ExploreContainer from "./session/explore_container";
 
 const App = () => (
   <div>
-
-    <h1>Instagran!!!</h1>
-    {/* <Route path="/login" render={props => <LoginFormContainer {...props} />} />
-    <Route path="/signup" render={props => <SignupFormContainer {...props} />} /> */}
-    <AuthRoute exact path="/" component={LoginFormContainer} />
-    <AuthRoute path="/signup" component={SignupFormContainer} />
     <ProtectedRoute path="/" component={NavBarContainer} />
     <ProtectedRoute path="/explore" component={ExploreContainer} />
+    <AuthRoute exact path="/" component={LoginFormContainer} />
+    <AuthRoute path="/signup" component={SignupFormContainer} />
   </div>
 );
 

@@ -46,18 +46,19 @@ class SessionForm extends React.Component {
       otherFormLink = '/signup'
     }
     return (
-      <>
-      <div id="session-form">
-        <h3>{thisFormName}</h3>
-        <form>
-          <Inputs update={this.update}/>
-          <button onClick={this.handleSubmit}>{this.props.formType}</button>
-        </form>
+      <div id='session-form'>
+        <div>
+          <h1 className='logo'>Instagran</h1>
+          <h3>{thisFormName}</h3>
+          <form>
+            <Inputs update={this.update}/>
+            <button onClick={this.handleSubmit}>{this.props.formType}</button>
+          </form>
+        </div>
+        <div>
+          <Link to={otherFormLink}>{otherFormName}</Link>
+        </div>
       </div>
-      <div>
-        <Link to={otherFormLink}>{otherFormName}</Link>
-      </div>
-      </>
     )
   }
 }
