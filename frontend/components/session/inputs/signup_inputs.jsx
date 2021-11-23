@@ -1,3 +1,5 @@
+import React from "react";
+
 const SignupInputs = props => {
   return (
     <>
@@ -12,8 +14,6 @@ const SignupInputs = props => {
       
       <label htmlFor="password">Password</label>
       <input id="password" type="password" onChange={props.update('password')} />
-      
-      <button>{props.formType}</button>
     </>
   )
 }

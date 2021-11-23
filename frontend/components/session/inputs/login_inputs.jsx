@@ -1,3 +1,5 @@
+import React from "react";
+
 const LoginInputs = props => {
   return (
     <>
@@ -6,8 +8,6 @@ const LoginInputs = props => {
       
       <label htmlFor="password">Password</label>
       <input id="password" type="password" onChange={props.update('password')} />
-      
-      <button>{props.formType}</button>
     </>
   )
 }

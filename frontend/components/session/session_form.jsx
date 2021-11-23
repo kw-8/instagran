@@ -25,17 +25,38 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.submitForm(user);
   }
 
   render() {
     const Inputs = this.props.inputs;
+    const {formType} = this.props;
+
+    let thisFormName;
+    let otherFormName;
+    let otherFormLink;
+    if (formType==='signup') {
+      thisFormName = 'Sign Up'
+      otherFormName = 'Login';
+      otherFormLink = '/';
+    }
+    else {
+      thisFormName = 'Login';
+      otherFormName = 'Sign Up';
+      otherFormLink = '/signup'
+    }
     return (
       <>
-        <h3>{this.props.formType}</h3>
+      <div id="session-form">
+        <h3>{thisFormName}</h3>
         <form>
-          <Inputs update={this.update} handleSubmit={this.handleSubmit}/>
+          <Inputs update={this.update}/>
+          <button onClick={this.handleSubmit}>{this.props.formType}</button>
         </form>
+      </div>
+      <div>
+        <Link to={otherFormLink}>{otherFormName}</Link>
+      </div>
       </>
     )
   }

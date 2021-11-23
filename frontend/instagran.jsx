@@ -7,10 +7,10 @@ import * as sessionActions from './actions/session_actions'
 document.addEventListener('DOMContentLoaded', () =>{
   const root = document.getElementById('root');
   const store = configureStore();
-  // ReactDOM.render(<Root store={store} />, root);
-  ReactDOM.render(<h1>hello hello</h1>, root);
+  // ReactDOM.render(<h1>hello hello</h1>, root);
   window.store = store;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.sessionActions = sessionActions;
+  ReactDOM.render(<Root store={store} />, root);
 })
