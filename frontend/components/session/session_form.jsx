@@ -39,13 +39,13 @@ class SessionForm extends React.Component {
     if (formType==='signup') {
       thisFormName = 'Sign Up'
       otherFormName = 'Login';
-      otherFormText = 'Have An account?';
+      otherFormText = 'Have An account? ';
       otherFormLink = '/';
     }
     else {
       thisFormName = 'Login';
       otherFormName = 'Sign Up';
-      otherFormText = 'Don\'t have an account?';
+      otherFormText = 'Don\'t have an account? ';
       otherFormLink = '/signup'
     }
     return (
@@ -59,7 +59,7 @@ class SessionForm extends React.Component {
           </form>
         </div>
         <div>
-          {otherFormText} 
+          {otherFormText}
           <Link to={otherFormLink}>{otherFormName}</Link>
         </div>
       </div>

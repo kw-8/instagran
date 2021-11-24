@@ -2,6 +2,8 @@ $lightest-gray: rgb(250, 250, 250);
 $border-gray: lightgray;
 $bright-blue: rgb(0, 149, 246);
 $basic-text: rgb(38, 38, 38);
+$sharp-corner: 1px;
+$round-corner: 3px;
 
 .logo {
   font-family: 'Lobster Two', cursive;
@@ -37,12 +39,12 @@ body {
       padding: 20px;
       margin: 10px;
       border: 1px solid $border-gray;
-      border-radius: 1px;
+      border-radius: $sharp-corner;
       box-sizing: border-box;
 
       input {
         border: 1px solid $border-gray;
-        border-radius: 3px;
+        border-radius: $round-corner;
         margin: 3px;
         margin-bottom: .4em;
         box-sizing: border-box;
@@ -59,7 +61,7 @@ body {
         width: 90%;
         background-color: $bright-blue;
         border: none;
-        border-radius: 3px;
+        border-radius: $round-corner;
         margin: 3px;
         margin-top: .6em;
         margin-bottom: .6em;
