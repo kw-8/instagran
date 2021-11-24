@@ -3,7 +3,7 @@ import {
   LOGOUT_CURRENT_USER
 } from "../actions/session_actions";
 
-const nullSession = { currentUser: null }
+const nullSession = { currentUserId: null }
 
 const sessionsReducer = (state = nullSession, action) => {
   Object.freeze(state);
@@ -12,7 +12,7 @@ const sessionsReducer = (state = nullSession, action) => {
       let newState = Object.assign({}, { currentUserId: action.user.id});
       return newState;
     case LOGOUT_CURRENT_USER:
-      return state;
+      return nullSession;
     default:
       return state;
   }

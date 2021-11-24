@@ -3,11 +3,9 @@ import React from "react";
 const LoginInputs = props => {
   return (
     <>
-      <label htmlFor="username">Username</label>
-      <input id="username" type="text" onChange={props.update('username')} />
-      
-      <label htmlFor="password">Password</label>
-      <input id="password" type="password" onChange={props.update('password')} />
+      <input id="username" type="text" placeholder='Username' onChange={props.update('username')} />
+      <br />
+      <input id="password" type="password" placeholder='Password' onChange={props.update('password')} />
     </>
   )
 }

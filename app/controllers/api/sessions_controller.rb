@@ -14,6 +14,8 @@ class Api::SessionsController < ApplicationController
 
   def destroy
     @user = current_user
+    p @user
+    p session[:session_token]
     if @user
       logout
       render json: {}

@@ -34,28 +34,32 @@ class SessionForm extends React.Component {
 
     let thisFormName;
     let otherFormName;
+    let otherFormText;
     let otherFormLink;
     if (formType==='signup') {
       thisFormName = 'Sign Up'
       otherFormName = 'Login';
+      otherFormText = 'Have An account?';
       otherFormLink = '/';
     }
     else {
       thisFormName = 'Login';
       otherFormName = 'Sign Up';
+      otherFormText = 'Don\'t have an account?';
       otherFormLink = '/signup'
     }
     return (
-      <div id='session-form'>
+      <div id='session-form' className={formType}>
         <div>
           <h1 className='logo'>Instagran</h1>
-          <h3>{thisFormName}</h3>
           <form>
             <Inputs update={this.update}/>
-            <button onClick={this.handleSubmit}>{this.props.formType}</button>
+            <br />
+            <button onClick={this.handleSubmit}>{thisFormName}</button>
           </form>
         </div>
         <div>
+          {otherFormText} 
           <Link to={otherFormLink}>{otherFormName}</Link>
         </div>
       </div>
