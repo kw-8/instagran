@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.integer :poster_id, null: false
       t.text :description
 
-      t.index :poster_id, unique: true
+      t.index :poster_id
       
       t.timestamps
     end

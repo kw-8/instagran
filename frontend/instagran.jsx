@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from './components/root'
 import * as sessionActions from './actions/session_actions'
+import * as postActions from './actions/post_actions'
 
 document.addEventListener('DOMContentLoaded', () =>{
   const root = document.getElementById('root');
@@ -24,5 +25,6 @@ document.addEventListener('DOMContentLoaded', () =>{
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.sessionActions = sessionActions;
+  window.postActions = postActions;
   ReactDOM.render(<Root store={store} />, root);
 })
