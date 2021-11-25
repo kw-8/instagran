@@ -15,9 +15,15 @@ class NavBar extends React.Component {
   }
 
   render() {
-    let un = this.props.currentUser.username;
+    let un
+    if (this.props.currentUser) {
+      un = this.props.currentUser.username
+    }
+    else {
+      un = 'null';
+    }
     let buttons;
-    if (un != null) {
+    if (un != 'null') {
       buttons = (
         <>
         <h3>{un}</h3>
