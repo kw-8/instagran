@@ -18,12 +18,14 @@ body {
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  background-color: $lightest-gray;
   
   > div {
     display: inherit;
     align-items: inherit;
     justify-content: inherit;
-    width: 90%;
+    width: 100%;
+    height: 100%;
   }
 
 
@@ -41,7 +43,8 @@ body {
       border: 1px solid $border-gray;
       border-radius: $sharp-corner;
       box-sizing: border-box;
-
+      background-color: white;
+      
       input {
         border: 1px solid $border-gray;
         border-radius: $round-corner;
@@ -91,7 +94,8 @@ body {
   top:0;
   left:0;
   width: 100vw;
-  background-color: paleturquoise;
+  background-color: white;
+  border-bottom: 1px solid $border-gray;
 
   * {
     padding: 10px;
