@@ -13,24 +13,29 @@ $round-corner: 3px;
   border-radius: $sharp-corner;
   color: $basic-text;
   box-sizing: border-box;
-  width: 80%;
-  height: 70vh;
+  width: 60%;
+  height: 80vh;
   display: flex;
   flex-direction: row;
-
+  margin-top: calc(2em);
+  
   .image-container, .text-container {
-    width: 50%;
     background-color: white;
     display: flex;
     flex-direction: column;
   }
+  
+  .text-container {
+    width: 40%;
 
-  .text-container > div {
-    box-sizing: border-box;
+    > div {
+      box-sizing: border-box;
+    }
   }
   
   .image-container {
     background-color: lightblue;
+    width: 60%;
   }
   .description-container {
     background-color: lavenderblush;

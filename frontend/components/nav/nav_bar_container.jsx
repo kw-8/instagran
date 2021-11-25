@@ -3,11 +3,9 @@ import { logout } from "../../actions/session_actions";
 import NavBar from "./nav_bar";
 
 const mapStateToProps = state => {
+  // console.log(state)
   return ({
-    user: {
-      username: 'username here'
-      // icon???
-    }
+    currentUser: state.session.currentUser
   })
 }
 
