@@ -5,7 +5,7 @@ import Post from "../posts/post";
 class Explore extends React.Component {
   constructor(props) {
     super(props)
-    this.props.getPosts()
+    // this.getPosts = this.props.getPosts()
     // debugger;
   }
   
@@ -16,15 +16,16 @@ class Explore extends React.Component {
   render() {
     console.log('these are props', this.props)
     const { posts } = this.props;
+    console.log('these are posts', posts)
     return (
       <div id="explore">explore
         <ul>
           {
             // posts.map(post => (
-              //   <Post
-              //     key={post.id}
-              //     post={post}
-              //   />
+            //     <Post
+            //       key={post.id}
+            //       post={post}
+            //     />
             // ))
           }
         </ul>
