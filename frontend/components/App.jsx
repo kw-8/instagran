@@ -18,8 +18,8 @@ const App = () => (
   <div>
     <AuthRoute exact path="/" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
-    
-    <ProtectedRoute path="/" component={NavBarContainer} />
+
+    <ProtectedRoute exact path="/explore" component={NavBarContainer} />
     <ProtectedRoute path="/explore" component={ExploreContainer} />
 
     <Route exact path="/posts/:postId" component={NavBarContainer} />
