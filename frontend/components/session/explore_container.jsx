@@ -1,12 +1,13 @@
+import React from "react";
 import { connect } from "react-redux";
 import Explore from "./explore";
-import { getPosts } from "../../util/post_util";
+import { getPosts } from "../../actions/post_actions";
 
 const mapStateToProps = state => {
   console.log(state);
-  debugger;
+  // debugger;
   return ({
-    posts: state.posts
+    posts: Object.keys(state.entities.posts).map(key => state.entities.posts[key])
   })
 }
 

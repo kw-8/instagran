@@ -5,8 +5,7 @@ import {
 } from "../actions/post_actions";
 
 const nullPost = { posts: null }
-
-const postsReducer = (state=nullPost, action) => {
+export default (state=nullPost, action) => {
   Object.freeze(state);
 
   let newState = Object.assign({}, state);
@@ -16,7 +15,7 @@ const postsReducer = (state=nullPost, action) => {
     case RECEIVE_POSTS:
       const posts = {}
       action.posts.forEach( post => {
-        posts[post.id] = post;
+        posts[post.id] = post
       });
       return posts;
     case REMOVE_POST:
@@ -26,5 +25,3 @@ const postsReducer = (state=nullPost, action) => {
       return state;
   }
 }
-
-export default postsReducer;

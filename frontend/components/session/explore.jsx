@@ -6,11 +6,11 @@ class Explore extends React.Component {
   constructor(props) {
     super(props)
     this.props.getPosts()
-    debugger;
+    // debugger;
   }
   
   componentDidMount(){
-    // this.props.getPosts();
+    this.props.getPosts();
   }
   
   render() {
