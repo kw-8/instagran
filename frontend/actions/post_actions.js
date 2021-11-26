@@ -23,7 +23,11 @@ const receivePostErrors = errors => ({
 });
 
 // not sure what to put in here
-export const getPosts = () => dispatch => {}
+export const getPosts = () => dispatch => {
+  return POSTUtil.getPosts().then(
+    post => dispatch(receivePosts(post))
+  )
+}
 
 export const getPost = id => dispatch => {
   return POSTUtil.getPost(id).then(

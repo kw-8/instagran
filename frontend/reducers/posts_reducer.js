@@ -14,12 +14,16 @@ const postsReducer = (state=nullPost, action) => {
     case RECEIVE_POST:
       return Object.assign({}, state, {[action.post.id] : action.post});
     case RECEIVE_POSTS:
-      return action.posts;
+      const posts = {}
+      action.posts.forEach( post => {
+        posts[post.id] = post;
+      });
+      return posts;
     case REMOVE_POST:
       delete newState[posts][action.post.id]
       return newState;
     default:
-      state;
+      return state;
   }
 }
 
