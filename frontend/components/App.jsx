@@ -22,6 +22,8 @@ const App = () => (
     <ProtectedRoute exact path="/explore" component={NavBarContainer} />
     <ProtectedRoute path="/explore" component={ExploreContainer} />
 
+    <ProtectedRoute exact path="/users/:userId" component={NavBarContainer} />
+
     <Route exact path="/posts/:postId" component={NavBarContainer} />
     <Route exact path="/posts/:postId" component={PostContainer} />
   </div>

@@ -15,7 +15,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    let un
+    let un;
     if (this.props.currentUser) {
       un = this.props.currentUser.username
     }

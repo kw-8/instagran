@@ -96,6 +96,7 @@ body {
   width: 100vw;
   background-color: white;
   border-bottom: 1px solid $border-gray;
+  justify-content: space-between;
 
   * {
     padding: 10px;
@@ -106,7 +107,6 @@ body {
   .logo { font-size: x-large; margin-left: 14%;}
   
   #nav-links {
-    margin-left: 50%;
     align-content: center;
     align-items: center;
   }
