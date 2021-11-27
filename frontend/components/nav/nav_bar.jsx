@@ -15,33 +15,13 @@ class NavBar extends React.Component {
   }
 
   render() {
-    let un;
-    if (this.props.currentUser) {
-      un = this.props.currentUser.username
-    }
-    else {
-      un = 'null';
-    }
-    let buttons;
-    if (un != 'null') {
-      buttons = (
-        <>
-        <h3>{un}</h3>
-        <Link to='/explore'>Home</Link>
-        <button onClick={this.handleLogout}>Logout</button>
-        </>
-      )
-    } else {
-      <>
-        <Link to='/'>Login</Link>
-        <Link to='/signup'>Sign Up</Link>
-      </>
-    }
+    let un = this.props.currentUser ? this.props.currentUser.username : null;
+
     return (
       <div id='nav-bar'>
         <h1 className='logo'>Instagran</h1>
         <div id='nav-links'>
-          {un != 'null' ?
+          {un != null ?
             <>
               <h3>{un}</h3>
               <Link to='/explore'>Home</Link>

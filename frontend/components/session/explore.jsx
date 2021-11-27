@@ -5,8 +5,6 @@ import Post from "../posts/post";
 class Explore extends React.Component {
   constructor(props) {
     super(props)
-    // this.getPosts = this.props.getPosts()
-    // debugger;
   }
   
   componentDidMount(){

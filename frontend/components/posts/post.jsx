@@ -7,6 +7,7 @@ class Post extends React.Component {
   }
 
   render() {
+    const { description } = this.props;
     return (
       <div className='post'>
         <div className='image-container'>
@@ -14,7 +15,7 @@ class Post extends React.Component {
         </div>
         <div className='text-container'>
           <div className='description-container'>
-            {this.props.description}
+            {description}
           </div>
           <div className='comments-container'>
             Comments go here

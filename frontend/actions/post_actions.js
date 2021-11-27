@@ -16,9 +16,7 @@ const receivePosts = posts => {
 //   type: RECEIVE_POSTS,
 //   posts
 // });
-const receivePost = post =>
-{
-  debugger;
+const receivePost = post => {
   console.log('receive one,,,', post)
   return {
     type: RECEIVE_POST,
@@ -45,10 +43,12 @@ export const getPosts = () => dispatch => {
       console.log('got posts,,,', posts),
       dispatch(receivePosts(posts))
     )
+    .fail(error => console.log(error))
   )
 }
 
 export const getPost = id => dispatch => {
+  debugger;
   return POSTUtil.getPost(id).then(
     post => dispatch(receivePost(post))
   )
