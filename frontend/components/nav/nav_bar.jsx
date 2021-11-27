@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Switch } from "react-router";
-import { AuthRoute, ProtectedRoute } from "../../util/route";
 
 class NavBar extends React.Component {
   constructor(props){
