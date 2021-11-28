@@ -5,28 +5,14 @@ export const RECEIVE_POST = 'RECEIVE_POST';
 export const REMOVE_POST = 'REMOVE_POST';
 export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
 
-const receivePosts = posts => {
-  console.log('receive,,,', posts)
-  return {
-    type: RECEIVE_POSTS,
-    posts
-  }
-}
-// ({
-//   type: RECEIVE_POSTS,
-//   posts
-// });
-const receivePost = post => {
-  console.log('receive one,,,', post)
-  return {
-    type: RECEIVE_POST,
-    post
-  }
-}
-// ({
-//   type: RECEIVE_POST,
-//   post
-// });
+const receivePosts = posts => ({
+  type: RECEIVE_POSTS,
+  posts
+});
+const receivePost = post => ({
+  type: RECEIVE_POST,
+  post
+});
 const removePost = post => ({
   type: REMOVE_POST,
   post
@@ -48,7 +34,6 @@ export const getPosts = () => dispatch => {
 }
 
 export const getPost = id => dispatch => {
-  debugger;
   return POSTUtil.getPost(id).then(
     post => dispatch(receivePost(post))
   )

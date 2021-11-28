@@ -6,8 +6,16 @@ class Post extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    this.props.getPost(this.props.match.params.postId)
+      .then(() => console.log(this.props.post.description))
+  }
+
   render() {
-    const { description } = this.props;
+    if (!this.props.post) {
+      return 'loading';
+    }
+    const { description } = this.props.post;
     return (
       <div className='post'>
         <div className='image-container'>

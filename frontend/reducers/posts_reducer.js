@@ -12,9 +12,9 @@ export default (state = nullPost, action) => {
   let newState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_POST:
-      // debugger;
-      const newPost = {[action.post.id]: action.post}
-      return merge(newState, newPost);
+      console.log(action.post);
+      newState[action.post.id] = action.post;
+      return newState;
     case RECEIVE_POSTS:
       const posts = {}
       console.log('action', action);
