@@ -24,6 +24,7 @@ class Post extends React.Component {
     const user_box = (
       <div className='user-box'>
         <div>
+          {/* pfp here */}
           {user_link}
         </div>
         {/* refactor link to modal later */}

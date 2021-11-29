@@ -10,7 +10,8 @@ $round-corner: 3px;
 }
 body {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
-  font: $basic-text, 14px;
+  color: $basic-text;
+  font-size: 14px;
 }
 #root {
   display: flex;
@@ -78,7 +79,6 @@ body {
         padding: 0;
         height: fit-content;
         color: $bright-blue;
-        font-size: 16px;
         font-weight: bold;
         margin-bottom: 0;
         padding-bottom: 0;
