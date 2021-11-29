@@ -28,7 +28,7 @@ class Post extends React.Component {
         </div>
         <div className='text-container'>
           <div className='description-container'>
-            {description}
+            <Link to='/'>username here</Link> {description}
           </div>
           <div className='comments-container'>
             Comments go here

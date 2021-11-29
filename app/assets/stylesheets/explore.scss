@@ -2,7 +2,7 @@ $lightest-gray: rgb(250, 250, 250);
 $border-gray: lightgray;
 $bright-blue: rgb(0, 149, 246);
 $basic-text: rgb(38, 38, 38);
-$sharp-corner: 1px;
+$sharp-corner: 2px;
 $round-corner: 3px;
 
 #explore {
@@ -10,7 +10,7 @@ $round-corner: 3px;
   width: 100%;
   
   ul {
-    padding-top: 1em;
+    padding-top: 3em;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -28,6 +28,10 @@ $round-corner: 3px;
 
       background-color: white;
       color: $basic-text;
+
+      .image-container, .comments-container {
+        background-color: wheat;
+      }
     }
   }
 }
