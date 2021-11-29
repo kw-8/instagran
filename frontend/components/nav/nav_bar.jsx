@@ -17,7 +17,7 @@ class NavBar extends React.Component {
 
     return (
       <div id='nav-bar'>
-        <h1 className='logo'>Instagran</h1>
+        <h1 className='logo'><Link to='/'>Instagran</Link></h1>
         <div id='nav-links'>
           {un != null ?
             <>

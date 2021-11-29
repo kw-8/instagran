@@ -105,7 +105,12 @@ body {
     flex-direction: inherit;
   }
 
-  .logo { font-size: x-large; margin-left: 14%;}
+  .logo, .logo > a {
+    font-size: x-large;
+    margin-left: 14%;
+    color: $basic-text;
+    text-decoration: none;
+  }
   
   #nav-links {
     align-content: center;

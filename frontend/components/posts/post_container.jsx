@@ -1,6 +1,9 @@
 import { connect } from "react-redux";
 import Post from './post'
-import { getPost } from "../../actions/post_actions";
+import {
+  getPost,
+  deletePost
+} from "../../actions/post_actions";
 
 const mSTP = (state, ownProps) => (
   {
@@ -10,7 +13,8 @@ const mSTP = (state, ownProps) => (
 )
 
 const mDTP = (dispatch) => ({
-  getPost: (id) => dispatch(getPost(id))
+  getPost: (id) => dispatch(getPost(id)),
+  deletePost: (id) => dispatch(deletePost(id))
 })
 
 export default connect(mSTP, mDTP)(Post);
