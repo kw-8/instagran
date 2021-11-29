@@ -26,10 +26,8 @@ const receivePostErrors = errors => ({
 export const getPosts = () => dispatch => {
   return POSTUtil.getPosts().then(
     posts => (
-      console.log('got posts,,,', posts),
       dispatch(receivePosts(posts))
     )
-    .fail(error => console.log(error))
   )
 }
 
