@@ -7,8 +7,10 @@ class Post extends React.Component {
   }
 
   componentDidMount() {
+    if (!this.props.type) {
     this.props.getPost(this.props.match.params.postId)
       .then(() => console.log(this.props.post.description))
+    }
   }
 
   render() {

@@ -12,20 +12,19 @@ class Explore extends React.Component {
   }
   
   render() {
-    console.log('these are props', this.props)
+    // console.log('these are props', this.props)
     const { posts } = this.props;
-    console.log('these are posts', posts)
     return (
       <div id="explore">explore
         <ul>
           {
-            // posts.map(post => (
-            //     <Post
-            //       key={post.id}
-            //       post={post}
-            //       type='list_item'
-            //     />
-            // ))
+            posts.map(post => (
+                <Post
+                  key={post.id}
+                  post={post}
+                  type='list_item'
+                />
+            ))
           }
         </ul>
       </div>
