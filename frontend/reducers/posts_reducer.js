@@ -12,13 +12,10 @@ export default (state = nullPost, action) => {
   let newState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_POST:
-      console.log(action.post);
       newState[action.post.id] = action.post;
       return newState;
     case RECEIVE_POSTS:
       const posts = {}
-      console.log('action', action);
-      // debugger;
       Object.values(action.posts).forEach( post => {
         posts[post.id] = post
       });
