@@ -7,6 +7,7 @@ class Post extends React.Component {
   }
 
   componentDidMount() {
+    // fetch a post *unless* given prop type: i.e. list_item
     if (!this.props.type) {
     this.props.getPost(this.props.match.params.postId)
       .then(() => console.log(this.props.post.description))
@@ -19,7 +20,7 @@ class Post extends React.Component {
     }
     const { description } = this.props.post;
 
-    const div_name = (this.props.post.type === 'list_item') ? 'post-item' : 'post'
+    const div_name = (this.props.type === 'list_item') ? 'post-item' : 'post'
     return (
       <div className={div_name}>
         <div className='image-container'>

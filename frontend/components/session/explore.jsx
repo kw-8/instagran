@@ -12,7 +12,6 @@ class Explore extends React.Component {
   }
   
   render() {
-    // console.log('these are props', this.props)
     const { posts } = this.props;
     return (
       <div id="explore">explore

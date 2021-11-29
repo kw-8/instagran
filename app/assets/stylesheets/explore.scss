@@ -4,3 +4,30 @@ $bright-blue: rgb(0, 149, 246);
 $basic-text: rgb(38, 38, 38);
 $sharp-corner: 1px;
 $round-corner: 3px;
+
+#explore {
+  height: fit-content;
+  width: 100%;
+  
+  ul {
+    padding-top: 1em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    .post-item {
+      border: 1px solid $border-gray;
+      border-radius: $sharp-corner;
+      box-sizing: border-box;
+      padding: 20px;
+      width: 60%;
+      max-height: 100vh;
+      margin-top: calc(2em);
+      display: flex;
+      flex-direction: column;
+
+      background-color: white;
+      color: $basic-text;
+    }
+  }
+}
