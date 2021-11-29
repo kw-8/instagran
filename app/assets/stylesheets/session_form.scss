@@ -109,6 +109,19 @@ body {
   #nav-links {
     align-content: center;
     align-items: center;
+
+    .nav-login, .nav-signup {
+      font: bold;
+      text-decoration: none;
+      padding-top: .2em;
+      padding-bottom: .2em;
+    }
+    .nav-login {
+      color: white;
+      background-color: $bright-blue;
+      border-radius: $round-corner;
+    }
+    .nav-signup {color: $bright-blue;}
   }
 
   button {

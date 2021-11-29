@@ -16,8 +16,10 @@ class Post extends React.Component {
       return 'loading';
     }
     const { description } = this.props.post;
+
+    const div_name = (this.props.post.type === 'list_item') ? 'post-item' : 'post'
     return (
-      <div className='post'>
+      <div className={div_name}>
         <div className='image-container'>
           Images go here
         </div>

@@ -12,8 +12,8 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
-  render() {
-    let un = this.props.currentUser ? this.props.currentUser.username : null;
+  render() {// fix cond
+    let un = (this.props.currentUser) ? this.props.currentUser.username : null;
 
     return (
       <div id='nav-bar'>
@@ -27,8 +27,8 @@ class NavBar extends React.Component {
             </>
           :
             <>
-              <Link to='/'>Login</Link>
-              <Link to='/signup'>Sign Up</Link>
+              <Link to='/' className='nav-login'>Login</Link>
+              <Link to='/signup' className='nav-signup'>Sign Up</Link>
             </>
           }
         </div>

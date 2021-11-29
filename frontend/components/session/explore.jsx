@@ -23,6 +23,7 @@ class Explore extends React.Component {
             //     <Post
             //       key={post.id}
             //       post={post}
+            //       type='list_item'
             //     />
             // ))
           }
