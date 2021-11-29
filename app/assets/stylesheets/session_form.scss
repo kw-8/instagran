@@ -94,20 +94,21 @@ body {
   position: fixed;
   top:0;
   left:0;
-  width: 100vw;
+  width: 70vw;
+  height: 50px;
+  padding-left: 15vw;
+  padding-right: 15vw;
   background-color: white;
   border-bottom: 1px solid $border-gray;
   justify-content: space-between;
 
   * {
-    padding: 10px;
     display: inherit;
     flex-direction: inherit;
   }
 
   .logo, .logo > a {
     font-size: x-large;
-    margin-left: 14%;
     color: $basic-text;
     text-decoration: none;
   }

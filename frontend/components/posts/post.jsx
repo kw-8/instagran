@@ -20,11 +20,14 @@ class Post extends React.Component {
     }
     
     const {post, deletePost} = this.props
-    const user_link = (<Link to='/'>username here</Link>)
+    const user_link = (<Link to='/' className='bold-link'>username here</Link>)
     const user_box = (
       <div className='user-box'>
-        {user_link}
-        <Link to="/" className="x" onClick={() => deletePost(post.id)}>x</Link>
+        <div>
+          {user_link}
+        </div>
+        {/* refactor link to modal later */}
+        <Link to="/" className="x" className='bold-link' onClick={() => deletePost(post.id)}>x</Link>
       </div>
     )
     const { description } = this.props.post;
