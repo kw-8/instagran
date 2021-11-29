@@ -21,6 +21,12 @@ class Api::PostsController < ApplicationController
     render :index
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    # frontend handles redirect
+  end
+
   def post_params
     params.require(:post).permit(:poster_id, :description)
   end

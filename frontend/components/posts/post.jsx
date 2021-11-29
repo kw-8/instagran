@@ -24,7 +24,7 @@ class Post extends React.Component {
     const user_box = (
       <div className='user-box'>
         {user_link}
-        {/* <button onClick={() => deletePost(post.id)}>x</button> */}
+        <Link to="/" className="x" onClick={() => deletePost(post.id)}>x</Link>
       </div>
     )
     const { description } = this.props.post;
