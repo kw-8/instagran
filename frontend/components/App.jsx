@@ -14,6 +14,7 @@ import NavBarContainer from "./nav/nav_bar_container";
 import ExploreContainer from "./session/explore_container";
 import PostContainer from "./posts/post_container";
 import NewPostContainer from "./posts/new_post_container";
+import EditPostContainer from "./posts/edit_post_container";
 
 const App = () => (
   <div>
@@ -28,6 +29,7 @@ const App = () => (
 
     <Route exact path="/posts/:postId" component={NavBarContainer} />
     <Route exact path="/posts/:postId" component={PostContainer} />
+    <ProtectedRoute exact path="/posts/:postId" component={EditPostContainer} />
   </div>
 );
 
