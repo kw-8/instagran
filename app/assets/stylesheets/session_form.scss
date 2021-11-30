@@ -8,7 +8,7 @@ $round-corner: 3px;
 .logo {
   font-family: 'Lobster Two', cursive;
 }
-body {
+body, textarea {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
   color: $basic-text;
   font-size: 14px;
