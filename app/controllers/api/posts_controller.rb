@@ -21,6 +21,15 @@ class Api::PostsController < ApplicationController
     render :index
   end
 
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      render json: @post, include: :tags
+    else
+      render json: @post.errors.full_messages, status: 422
+    end
+  end
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
