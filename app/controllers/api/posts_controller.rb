@@ -26,6 +26,7 @@ class Api::PostsController < ApplicationController
     p params
     @post = Post.find(params[:id])
     @post.update(post_params)
+    render :show
   end
 
   def destroy

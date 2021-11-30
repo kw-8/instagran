@@ -12,6 +12,7 @@ export default (state = nullPost, action) => {
   let newState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_POST:
+      // debugger;
       newState[action.post.id] = action.post;
       return newState;
     case RECEIVE_POSTS:
