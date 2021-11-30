@@ -9,7 +9,7 @@ class PostForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-componentDidMount() {
+  componentDidMount() {
     if (!this.props.post) {
       this.props.getPost(this.props.match.params.postId)
         .then(() => this.setState(this.props.post))
@@ -31,7 +31,6 @@ componentDidMount() {
   }
 
   render() {
-    // debugger;
     if (!this.state) {
       return null;
     }
