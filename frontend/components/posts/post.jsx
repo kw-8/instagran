@@ -18,7 +18,7 @@ class Post extends React.Component {
     if (!this.props.post) {
       return 'Post Not Found';
     }
-    
+    console.log(this.props)
     const {post, deletePost} = this.props
     const user_link = (<Link to='/' className='bold-link'>username here</Link>)
     const user_box = (
@@ -47,6 +47,7 @@ class Post extends React.Component {
           </div>
           <div className='comments-container'>
             Comments go here
+            {/* <CommentsContainer postId={id} /> */}
           </div>
         </div>
       </div>
