@@ -9,6 +9,8 @@ class Api::PostsController < ApplicationController
   end
 
   def show
+    p 'PARAMS, show'
+    p params
     @post = Post.find(params[:id])
     if @post
       render :show
@@ -22,9 +24,7 @@ class Api::PostsController < ApplicationController
   end
 
   def update
-    p 'PARAMS, supposedly'
-    p params
-    @post = Post.find(params[:id])
+    @post = Post.find(post_params[:id])
     @post.update(post_params)
     render :show
   end
@@ -32,6 +32,7 @@ class Api::PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    render :index
     # frontend handles redirect
   end
 

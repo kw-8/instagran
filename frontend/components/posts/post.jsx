@@ -16,7 +16,7 @@ class Post extends React.Component {
 
   render() {
     if (!this.props.post) {
-      return 'loading';
+      return 'Post Not Found';
     }
     
     const {post, deletePost} = this.props
@@ -33,7 +33,8 @@ class Post extends React.Component {
     )
     const { description, imageUrls } = this.props.post;
     const div_name = (this.props.type === 'list_item') ? 'post-item' : 'post'
-    debugger;
+    
+    // debugger
     return (
       <div className={div_name}>
         { div_name === 'post-item' ?  user_box : '' }

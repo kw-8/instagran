@@ -1,6 +1,9 @@
 import { connect } from "react-redux";
 import Explore from "./explore";
-import { getPosts } from "../../actions/post_actions";
+import {
+  getPosts,
+  deletePost
+} from "../../actions/post_actions";
 
 const mapStateToProps = (state, ownProps) => {
   console.log(state.entities.posts);
@@ -11,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  getPosts: () => dispatch(getPosts())
+  getPosts: () => dispatch(getPosts()),
+  deletePost: (id) => dispatch(deletePost(id))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Explore);

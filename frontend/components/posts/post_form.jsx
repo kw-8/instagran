@@ -31,12 +31,13 @@ class PostForm extends React.Component {
 
     e.preventDefault();
     const formData = new FormData();
-    const {posterId, description} = this.state;
-    debugger
+    console.log('HEY', this.state);
+    const {id, posterId, description} = this.state;
+
+    if (id) formData.append('post[id]', id);
     formData.append('post[poster_id]', posterId);
     formData.append('post[description]', description);
     if (this.state.images) {
-      debugger
       for (let i = 0; i < this.state.images.length; i++) {
         formData.append("post[images][]", this.state.images[i]);
       }

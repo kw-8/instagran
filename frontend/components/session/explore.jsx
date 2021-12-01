@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { deletePost } from "../../util/post_util";
 import Post from "../posts/post";
 
 class Explore extends React.Component {
@@ -12,7 +13,7 @@ class Explore extends React.Component {
   }
   
   render() {
-    const { posts } = this.props;
+    const { posts, deletePost } = this.props;
     return (
       <div id="explore">explore
         <ul>
@@ -22,6 +23,7 @@ class Explore extends React.Component {
                   key={post.id}
                   post={post}
                   type='list_item'
+                  deletePost={deletePost}
                 />
             ))
           }
