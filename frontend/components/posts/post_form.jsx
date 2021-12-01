@@ -25,11 +25,9 @@ class PostForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // e.preventDefault();
-    // const post = Object.assign({}, this.state);
-    // this.props.submitPost(post);
-
     e.preventDefault();
+
+    // use formdata to pass in files
     const formData = new FormData();
     // console.log('HEY', this.state);
     const {id, posterId, description} = this.state;
