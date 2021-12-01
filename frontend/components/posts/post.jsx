@@ -31,12 +31,10 @@ class Post extends React.Component {
         <Link to="/" className="x" className='bold-link' onClick={() => deletePost(post.id)}>x</Link>
       </div>
     )
-    const { description, imageUrls } = this.props.post;
+    const { id, description, imageUrls } = this.props.post;
     const div_name = (this.props.type === 'list_item') ? 'post-item' : 'post'
-    
-    // debugger
     return (
-      <div className={div_name}>
+      <div className={div_name} key={`post-${id}`} >
         { div_name === 'post-item' ?  user_box : '' }
         <div className='image-container'>
           {imageUrls.map((url, i) => <img key={i} src={url} />)}

@@ -22,7 +22,7 @@ export default (state = nullPost, action) => {
       });
       return posts;
     case REMOVE_POST:
-      console.log('ACTION', action)
+      // console.log('ACTION', action)
       delete newState[action.post.id]
       return newState;
     default:

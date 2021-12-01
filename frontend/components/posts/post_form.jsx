@@ -31,7 +31,7 @@ class PostForm extends React.Component {
 
     e.preventDefault();
     const formData = new FormData();
-    console.log('HEY', this.state);
+    // console.log('HEY', this.state);
     const {id, posterId, description} = this.state;
 
     if (id) formData.append('post[id]', id);
