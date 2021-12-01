@@ -11,7 +11,7 @@ class Api::PostsController < ApplicationController
   def show
     p 'PARAMS, show'
     p params
-    @post = Post.find(params[:id])
+    @post = Post.with_attached_photos.find(params[:id])
     if @post
       render :show
     else render json: @post.errors.full_messages, status: 404
@@ -24,7 +24,7 @@ class Api::PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(post_params[:id])
+    @post = Post.with_attached_photos.find(post_params[:id])
     @post.update(post_params)
     render :show
   end
