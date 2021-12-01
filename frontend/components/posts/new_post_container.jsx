@@ -5,7 +5,7 @@ import PostForm from "./post_form";
 const mapStateToProps = state => {
   return ({
     post: {
-      poster_id: state.session.currentUser.id,
+      posterId: state.session.currentUser.id,
       description: ''
     },
     postType: 'new_post'

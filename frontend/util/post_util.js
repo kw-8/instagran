@@ -2,7 +2,9 @@ export const createPost = post => {
   return $.ajax({
     method: 'post',
     url: 'api/posts',
-    data: { post }
+    data: post,
+    contentType: false,
+    processData: false
   })
 }
 
@@ -10,7 +12,9 @@ export const updatePost = post => {
   return $.ajax({
     method: 'patch',
     url: `api/posts/${post.id}`,
-    data: { post }
+    data: post,
+    contentType: false,
+    processData: false
   })
 }
 

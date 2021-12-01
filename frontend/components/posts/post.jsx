@@ -31,14 +31,14 @@ class Post extends React.Component {
         <Link to="/" className="x" className='bold-link' onClick={() => deletePost(post.id)}>x</Link>
       </div>
     )
-    const { description } = this.props.post;
+    const { description, imageUrls } = this.props.post;
     const div_name = (this.props.type === 'list_item') ? 'post-item' : 'post'
-    
+    debugger;
     return (
       <div className={div_name}>
         { div_name === 'post-item' ?  user_box : '' }
         <div className='image-container'>
-          Images go here
+          {imageUrls.map((url, i) => <img key={i} src={url} />)}
         </div>
         <div className='text-container'>
           { div_name === 'post' ? user_box : '' }
