@@ -5,12 +5,14 @@ import {
   deletePost
 } from "../../actions/post_actions";
 
-const mSTP = (state, ownProps) => (
-  {
+const mSTP = (state, ownProps) => {
+  let post = ownProps.post || state.entities.posts[ownProps.match.params.postId]
+  return {
     description: 'placeholder for post description',
-    post: state.entities.posts[ownProps.match.params.postId]
+    post,
+    comments: Object.values(state.entities.comments).filter(comment => comment.postId === post.id)
   }
-)
+}
 
 const mDTP = (dispatch) => ({
   getPost: (id) => dispatch(getPost(id)),

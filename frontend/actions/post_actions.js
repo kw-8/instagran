@@ -5,9 +5,10 @@ export const RECEIVE_POST = 'RECEIVE_POST';
 export const REMOVE_POST = 'REMOVE_POST';
 export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
 
-const receivePosts = posts => ({
+
+const receivePosts = payload => ({
   type: RECEIVE_POSTS,
-  posts
+  payload
 });
 const receivePost = post => ({
   type: RECEIVE_POST,
@@ -22,12 +23,11 @@ const receivePostErrors = errors => ({
   errors
 });
 
-// not sure what to put in here
 export const getPosts = () => dispatch => {
   return POSTUtil.getPosts().then(
-    posts => (
-      dispatch(receivePosts(posts))
-    )
+    payload => {
+      dispatch(receivePosts(payload))
+    }
   )
 }
 

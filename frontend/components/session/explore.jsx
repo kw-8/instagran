@@ -1,7 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { deletePost } from "../../util/post_util";
-import Post from "../posts/post";
+import PostContainer from "../posts/post_container";
 
 class Explore extends React.Component {
   constructor(props) {
@@ -19,11 +17,10 @@ class Explore extends React.Component {
         <ul>
           {
             posts.map(post => (
-                <Post
+                <PostContainer
                   key={post.id}
                   post={post}
                   type='list_item'
-                  deletePost={deletePost}
                 />
             ))
           }

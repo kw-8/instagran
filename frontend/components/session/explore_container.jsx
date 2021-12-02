@@ -8,7 +8,8 @@ import {
 const mapStateToProps = (state, ownProps) => {
   return ({
     posts: Object.keys(state.entities.posts).map(key => state.entities.posts[key]),
-    url: ownProps.location.pathname
+    url: ownProps.location.pathname,
+    comments: state.entities.comments //filter happens in post
   })
 }
 

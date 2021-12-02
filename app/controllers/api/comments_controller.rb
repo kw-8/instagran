@@ -8,6 +8,11 @@ class Api::CommentsController < ApplicationController
     end
   end
 
+  def index
+    @comments = Comment.where(post_id: params[:post_id])
+    render :index
+  end
+
   def destroy
     @comment = Comment.find(params[:id])
     if @comment.destroy

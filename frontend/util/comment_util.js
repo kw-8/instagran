@@ -13,13 +13,6 @@ export const getComments = postId => {
   })
 }
 
-export const getComment = commentId => {
-  return $.ajax({
-    method: 'get',
-    url: `api/posts/${comment.postId}/comments/${commentId}`
-  })
-}
-
 export const deleteComment = comment => {
   return $.ajax({
     method: 'delete',

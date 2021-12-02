@@ -16,8 +16,9 @@ export default (state = nullPost, action) => {
       newState[action.post.id] = action.post;
       return newState;
     case RECEIVE_POSTS:
+      debugger
       const posts = {}
-      Object.values(action.posts).forEach( post => {
+      Object.values(action.payload.posts).forEach( post => {
         posts[post.id] = post
       });
       return posts;

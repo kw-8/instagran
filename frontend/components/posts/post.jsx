@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import g
 
 class Post extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Post extends React.Component {
     if (!this.props.post) {
       return 'Post Not Found';
     }
-    console.log(this.props)
+    console.log('POST RENDER', this.props)
     const {post, deletePost} = this.props
     const user_link = (<Link to='/' className='bold-link'>username here</Link>)
     const user_box = (
@@ -33,6 +34,8 @@ class Post extends React.Component {
     )
     const { id, description, imageUrls } = this.props.post;
     const div_name = (this.props.type === 'list_item') ? 'post-item' : 'post'
+
+    console.log(this.props.comments)
     return (
       <div className={div_name} key={`post-${id}`} >
         { div_name === 'post-item' ?  user_box : '' }
