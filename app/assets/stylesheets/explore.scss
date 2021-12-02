@@ -4,29 +4,45 @@ $bright-blue: rgb(0, 149, 246);
 $basic-text: rgb(38, 38, 38);
 $sharp-corner: 2px;
 $round-corner: 3px;
+$list-width: 50vw;
+$basic-padding: 20px;
+
+#post-form {
+  margin: 2em;
+  margin-top: calc(50px + 2em);
+  padding: $basic-padding;
+  border: 1px solid $border-gray;
+  box-sizing: border-box;
+  background-color: white;
+  width: $list-width;
+  
+  h3 {font-weight: 500;}
+  input {width: 60%;}
+  textarea {width: 38%; height: 100%;}
+}
 
 #explore {
   height: fit-content;
   width: 100%;
   
   ul {
-    padding-top: 3em;
     display: flex;
     align-items: center;
     flex-direction: column;
-
+    
     img {
-      width: 5vw;
+      width: 100%;
     }
     
     .post-item {
+      margin-bottom: 2em;
       border: 1px solid $border-gray;
       border-radius: $sharp-corner;
       box-sizing: border-box;
-      padding: 20px;
-      width: 60%;
+      padding: $basic-padding;
+      width: $list-width;
       max-height: 100vh;
-      margin-top: calc(2em);
+      // margin-top: calc(2em);
       display: flex;
       flex-direction: column;
 
