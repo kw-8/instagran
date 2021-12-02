@@ -13,6 +13,7 @@ class Api::PostsController < ApplicationController
     p params
     @post = Post.with_attached_images.find(params[:id])
     if @post
+      @comments = @post.comments
       render :show
     else render json: @post.errors.full_messages, status: 404
     end

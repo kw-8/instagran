@@ -10,7 +10,7 @@ class Post extends React.Component {
   componentDidMount() {
     // fetch a post *unless* given prop type: i.e. list_item
     if (!this.props.type) {
-      this.props.getPost(this.props.match.params.postId)
+      this.props.getPost(this.props.postId) //this.props.match.params.postId
         .then(() => console.log(this.props.post.description))
     }
   }
@@ -20,7 +20,7 @@ class Post extends React.Component {
       return 'Post Not Found';
     }
     console.log('POST RENDER', this.props)
-    const {post, deletePost} = this.props
+    const {post, deletePost, comments} = this.props
     const user_link = (<Link to='/' className='bold-link'>username here</Link>)
     const user_box = (
       <div className='user-box'>
@@ -35,7 +35,6 @@ class Post extends React.Component {
     const { id, description, imageUrls } = this.props.post;
     const div_name = (this.props.type === 'list_item') ? 'post-item' : 'post'
 
-    console.log(this.props.comments)
     return (
       <div className={div_name} key={`post-${id}`} >
         { div_name === 'post-item' ?  user_box : '' }
@@ -50,7 +49,7 @@ class Post extends React.Component {
           </div>
           <div className='comments-container'>
             Comments go here
-            {/* <CommentsContainer postId={id} /> */}
+            {/* <CommentsContainer comments={comments} /> */}
           </div>
         </div>
       </div>

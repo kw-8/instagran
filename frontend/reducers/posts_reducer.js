@@ -12,8 +12,8 @@ export default (state = nullPost, action) => {
   let newState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_POST:
-      // debugger;
-      newState[action.post.id] = action.post;
+      debugger;// action -> id
+      newState[action.payload.post.id] = action.payload.post;
       return newState;
     case RECEIVE_POSTS:
       debugger
@@ -23,7 +23,6 @@ export default (state = nullPost, action) => {
       });
       return posts;
     case REMOVE_POST:
-      // console.log('ACTION', action)
       delete newState[action.post.id]
       return newState;
     default:

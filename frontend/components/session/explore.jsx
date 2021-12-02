@@ -13,7 +13,7 @@ class Explore extends React.Component {
   render() {
     const { posts, deletePost } = this.props;
     return (
-      <div id="explore">explore
+      <div id="explore">
         <ul>
           {
             posts.map(post => (

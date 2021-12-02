@@ -5,7 +5,7 @@ import {
 } from "../actions/comment_actions";
 import { RECEIVE_POSTS } from "../actions/post_actions";
 
-const nullComment = { comments: null }
+const nullComment = { comments: {} }
 
 export default (state = nullComment.comments, action) => {
   // debugger
@@ -22,7 +22,7 @@ export default (state = nullComment.comments, action) => {
       return comments;
     case RECEIVE_COMMENTS:
       debugger
-      return Object.assign(nextState, action.comments);
+      return Object.assign(nextState, action.payload.comments);
     case RECEIVE_COMMENT:
       nextState[action.comment.id] = action.comment;
       return nextState;
