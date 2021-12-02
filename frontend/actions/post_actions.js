@@ -34,7 +34,7 @@ export const getPosts = () => dispatch => {
 export const getPost = id => dispatch => {
   return POSTUtil.getPost(id).then(
     payload => {
-      debugger
+      // debugger
       dispatch(receivePost(payload))
     }
   )

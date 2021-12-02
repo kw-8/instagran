@@ -3,25 +3,34 @@ import {
   RECEIVE_COMMENTS,
   REMOVE_COMMENT
 } from "../actions/comment_actions";
-import { RECEIVE_POSTS } from "../actions/post_actions";
+import {
+  RECEIVE_POSTS,
+  RECEIVE_POST
+} from "../actions/post_actions";
 
 const nullComment = { comments: {} }
 
 export default (state = nullComment.comments, action) => {
   // debugger
   Object.freeze(state);
+  const comments = {}
 
   let nextState = Object.assign({}, state);
   switch(action.type) {
     case RECEIVE_POSTS:
-      debugger
-      const comments = {}
+      // debugger
       Object.values(action.payload.comments).forEach(comment => {
         comments[comment.id] = comment
       });
       return comments;
+    case RECEIVE_POST:
+      Object.values(action.payload.comments).forEach(comment => {
+        comments[comment.id] = comment
+      });
+      // debugger
+      return comments;
     case RECEIVE_COMMENTS:
-      debugger
+      // debugger
       return Object.assign(nextState, action.payload.comments);
     case RECEIVE_COMMENT:
       nextState[action.comment.id] = action.comment;

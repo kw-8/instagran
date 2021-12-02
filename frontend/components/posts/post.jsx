@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import g
+import CommentsContainer from "../comments/comments_container";
 
 class Post extends React.Component {
   constructor(props) {
@@ -19,9 +19,9 @@ class Post extends React.Component {
     if (!this.props.post) {
       return 'Post Not Found';
     }
-    console.log('POST RENDER', this.props)
+    console.log('POST RENDER COMMENTS', this.props.comments)
     const {post, deletePost, comments} = this.props
-    const user_link = (<Link to='/' className='bold-link'>username here</Link>)
+    const user_link = (<Link to='/' className='bold-link'>{post.posterId}</Link>)
     const user_box = (
       <div className='user-box'>
         <div>
@@ -29,7 +29,9 @@ class Post extends React.Component {
           {user_link}
         </div>
         {/* refactor link to modal later */}
-        <Link to="/" className="x" className='bold-link' onClick={() => deletePost(post.id)}>x</Link>
+        <div>
+          <Link to="/" className="x" className='bold-link' onClick={() => deletePost(post.id)}>x</Link>
+        </div>
       </div>
     )
     const { id, description, imageUrls } = this.props.post;
@@ -48,8 +50,7 @@ class Post extends React.Component {
             {description}
           </div>
           <div className='comments-container'>
-            Comments go here
-            {/* <CommentsContainer comments={comments} /> */}
+            <CommentsContainer comments={comments} />
           </div>
         </div>
       </div>
