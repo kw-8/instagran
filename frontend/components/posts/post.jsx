@@ -10,8 +10,8 @@ class Post extends React.Component {
   componentDidMount() {
     // fetch a post *unless* given prop type: i.e. list_item
     if (!this.props.type) {
-    this.props.getPost(this.props.match.params.postId)
-      .then(() => console.log(this.props.post.description))
+      this.props.getPost(this.props.match.params.postId)
+        .then(() => console.log(this.props.post.description))
     }
   }
 
@@ -25,7 +25,7 @@ class Post extends React.Component {
     const user_box = (
       <div className='user-box'>
         <div>
-          {/* pfp here */}
+          {/* pfp component here */}
           {user_link}
         </div>
         {/* refactor link to modal later */}
