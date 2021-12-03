@@ -8,8 +8,6 @@ import {
 
 const mSTP = (state, ownProps) => {
   let post = ownProps.post || state.entities.posts[ownProps.match.params.postId]
-  console.log(post)
-  debugger
   // description: 'placeholder post descr'//state.entities.users.description,
   return {
     postId: post.id || '',
