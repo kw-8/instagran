@@ -12,7 +12,7 @@ const mSTP = (state, ownProps) => {
   debugger
   // description: 'placeholder post descr'//state.entities.users.description,
   return {
-    postid: ownProps.match.params.postId || post.id,
+    postId: post.id || '',
     post,
     comments: Object.values(state.entities.comments).filter(comment => comment.postId === parseInt(post.id))
   }
