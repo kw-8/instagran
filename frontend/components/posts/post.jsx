@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CommentsContainer from "../comments/comments_container";
+// import UserInfoContainer from "../user_info/user_info_container";
 
 class Post extends React.Component {
   constructor(props) {
@@ -21,11 +22,11 @@ class Post extends React.Component {
     }
     console.log('POST RENDER COMMENTS', this.props.comments)
     const {post, deletePost, comments} = this.props
-    const user_link = (<Link to='/' className='bold-link'>{post.posterId}</Link>)
+    const user_link = (<Link to='/' className='bold-link'>username here</Link>)
     const user_box = (
       <div className='user-box'>
         <div>
-          {/* pfp component here */}
+          {/* <UserInfoContainer userId='post.posterId'></UserInfoContainer> */}
           {user_link}
         </div>
         {/* refactor link to modal later */}
