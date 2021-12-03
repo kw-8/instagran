@@ -24,6 +24,9 @@ Instagran uses Ruby on Rails with the following
 
 ### Setup
 To set up the dependencies run `npm run webpack`
+
 To set up the Ruby gems run `bundle install`
+
 To create the database run `rails db:setup`
+
 To seed the database run `rails db:seed`
