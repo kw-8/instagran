@@ -12,6 +12,8 @@ class User < ApplicationRecord
     class_name: 'Post',
     dependent: :destroy
 
+  has_one_attached :profile_picture
+
   def self.find_by_credentials(un, pw)
     @user = User.find_by(username: un)
     @user && @user.is_valid_password?(pw) ? @user : nil
