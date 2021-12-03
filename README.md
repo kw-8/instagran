@@ -18,7 +18,8 @@ Ruby on Rails
 * Ruby version 2.5.1
 * Rails version 5.2.6
 * NPM version 6.14.15
-* PostgreSQL
+
+PostgreSQL
 
 ### Additional Technologies
 * Webpack
