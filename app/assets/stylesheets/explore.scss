@@ -41,7 +41,7 @@ $basic-padding: 20px;
       box-sizing: border-box;
       padding: $basic-padding;
       width: $list-width;
-      max-height: 100vh;
+      height: fit-content;
       // margin-top: calc(2em);
       display: flex;
       flex-direction: column;
