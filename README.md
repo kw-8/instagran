@@ -1,24 +1,36 @@
-# README
+# Instagran
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Live Site
+* [Live site](https://insta-gran.herokuapp.com)
 
-Things you may want to cover:
+## Intro
 
-* Ruby version
+## Technologies Used
+### Frontend
+* React
+* Redux
+* Javascript
+* HTML5
+* CSS
 
-* System dependencies
+### Backend
+Ruby on Rails
+* Ruby version 2.5.1
+* Rails version 5.2.6
+* NPM version 6.14.15
 
-* Configuration
+PostgreSQL
 
-* Database creation
+### Additional Technologies
+* Webpack
+* Git
+* AWS
 
-* Database initialization
+## Setup
+To set up the dependencies run `npm run webpack`
 
-* How to run the test suite
+To set up the Ruby gems run `bundle install`
 
-* Services (job queues, cache servers, search engines, etc.)
+To create the database run `rails db:setup`
 
-* Deployment instructions
-
-* ...
+To seed the database run `rails db:seed`
