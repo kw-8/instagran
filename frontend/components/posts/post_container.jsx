@@ -7,11 +7,12 @@ import {
 // import { withRouter } from "react-router";
 
 const mSTP = (state, ownProps) => {
+  debugger
   let post = ownProps.post || state.entities.posts[ownProps.match.params.postId]
-  // description: 'placeholder post descr'//state.entities.users.description,
-  return {
-    postId: post.id || '',
-    post,
+  
+  return { // first pass, post DNI, second pass received post, now in state
+    postId: ownProps.match.params.postId || '',
+    post: post || '',
     comments: Object.values(state.entities.comments).filter(comment => comment.postId === parseInt(post.id))
   }
 }
