@@ -7,9 +7,8 @@ import {
 // import { withRouter } from "react-router";
 
 const mSTP = (state, ownProps) => {
-  debugger
   let post = ownProps.post || state.entities.posts[ownProps.match.params.postId]
-  
+
   return { // first pass, post DNI, second pass received post, now in state
     postId: ownProps.match.params.postId || '',
     post: post || '',
