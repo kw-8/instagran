@@ -60,7 +60,7 @@ body, textarea {
         background-color: $lightest-gray;
       }
       .logo {
-        font-size: xxx-large;
+        font-size: 50px;
         margin-bottom: .8em;
       }
       
@@ -84,6 +84,14 @@ body, textarea {
         font-weight: bold;
         margin-bottom: 0;
         padding-bottom: 0;
+      }
+
+
+      button.demo-login {
+      border-top: 1px solid $border-gray;
+      color: $bright-blue;
+      background-color: white;
+      padding-top: 30px;
       }
     }
   }
@@ -110,7 +118,7 @@ body, textarea {
   }
 
   .logo, .logo > a {
-    font-size: x-large;
+    font-size: 26px;
     color: $basic-text;
     text-decoration: none;
   }
@@ -140,4 +148,5 @@ body, textarea {
     background-color: none;
     border: none;
   }
+
 }

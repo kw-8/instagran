@@ -25,6 +25,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
+    console.log(user)
     this.props.submitForm(user);
   }
 
@@ -56,6 +57,9 @@ class SessionForm extends React.Component {
             <Inputs update={this.update}/>
             <br />
             <button onClick={this.handleSubmit}>{thisFormName}</button>
+          </form>
+          <form>
+            <button className='demo-login' onClick={() => this.props.submitForm({username: 'super_grandma', password: 'supersuper'})}>Login with super_grandma</button>
           </form>
         </div>
         <div>
