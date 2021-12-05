@@ -10,7 +10,7 @@ class Comments extends React.Component {
   render() {
     const {comments} = this.props
     const user_link = (<Link to='/' className='bold-link'>username here</Link>)
-    console.log('RENDER COMMENTS IN COMMENTS JSX', comments)
+    // console.log('RENDER COMMENTS IN COMMENTS JSX', comments)
     return (
       <ul>
       {

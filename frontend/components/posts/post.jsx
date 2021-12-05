@@ -20,7 +20,8 @@ class Post extends React.Component {
     if (!this.props.post) {
       return 'Post Not Found';
     }
-    const {post, deletePost, comments} = this.props
+    const { post, deletePost, comments } = this.props
+    const { id, description, imageUrls, posterId } = post;
     const user_link = (<Link to='/' className='bold-link'>username here</Link>)
     const user_box = (
       <div className='user-box'>
@@ -30,11 +31,13 @@ class Post extends React.Component {
         </div>
         {/* refactor link to modal later */}
         <div>
-          <Link to="/" className="x" className='bold-link' onClick={() => deletePost(post.id)}>x</Link>
+          { this.props.type === 'list_item' ?
+            <Link to={`/posts/${id}`} className="x" className='bold-link'>{'link '}</Link> : ''}
+          { parseInt(this.props.post.posterId) === this.props.currentUserId ?
+            <Link to="/" className="x" className='bold-link' onClick={() => deletePost(post.id)}>x</Link> : ''}
         </div>
       </div>
     )
-    const { id, description, imageUrls } = this.props.post;
     const div_name = (this.props.type === 'list_item') ? 'post-item' : 'post'
 
     return (
