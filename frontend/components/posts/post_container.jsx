@@ -8,9 +8,10 @@ import {
 
 const mSTP = (state, ownProps) => {
   let post = ownProps.post || state.entities.posts[ownProps.match.params.postId]
+  let postId = ownProps.match ? ownProps.match.params.postId : ''
 
   return { // first pass, post DNI, second pass received post, now in state
-    postId: ownProps.match.params.postId || '',
+    postId,
     post: post || '',
     comments: Object.values(state.entities.comments).filter(comment => comment.postId === parseInt(post.id))
   }
