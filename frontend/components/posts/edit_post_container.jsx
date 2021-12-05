@@ -7,6 +7,7 @@ import PostForm from "./post_form";
 
 const mapStateToProps = (state, ownProps) => {
   return ({
+    currentUserId: state.session.currentUser.id,
     post: state.entities.posts[ownProps.match.params.postId],
     postType: 'edit_post'
   })

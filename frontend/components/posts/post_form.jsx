@@ -47,22 +47,29 @@ class PostForm extends React.Component {
     if (!this.state) {
       return null;
     }
+    let {postType} = this.props;
     return (
-      <div id='post-form'>
-        <div>
-          <h3>{this.props.postType === 'new_post' ? 'Create new post' : 'Edit post'}</h3>
-          <form>
-            <input
-              type="file"
-              onChange={e => this.setState({ images: e.target.files })}
-              multiple
-            />
-            <textarea id="description" placeholder="Add a caption" value={this.state.description} onChange={this.update('description')} />
-            <br />
-            <button onClick={this.handleSubmit}>Post</button>
-          </form>
+      <>
+      { postType === 'new_post' || this.state.posterId === this.props.currentUserId ? (
+        <div id='post-form' >
+          <div>
+            <h3>{postType === 'new_post' ? 'Create new post' : 'Edit post'}</h3>
+            <form>
+              <input
+                type="file"
+                onChange={e => this.setState({ images: e.target.files })}
+                multiple
+              />
+              <textarea id="description" placeholder="Add a caption" value={this.state.description} onChange={this.update('description')} />
+              <br />
+              <button onClick={this.handleSubmit}>Post</button>
+            </form>
+          </div>
         </div>
-      </div>
+      )
+      : ''
+      }
+      </>
     )
   }
 }
