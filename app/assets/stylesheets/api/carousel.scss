@@ -1,6 +1,6 @@
 .prev, .next {
   position: absolute;
-  top: 50%;
+  top: calc(50% - 6px - 0.7em);
   height: 1.2em;
   width: 1.2em;
 
@@ -18,6 +18,9 @@
 }
 .next {
   right: 0;
+}
+a.hidden {
+  visibility: hidden;
 }
 
 .image-container {

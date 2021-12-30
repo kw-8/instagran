@@ -24,6 +24,7 @@ body, textarea {
   background-color: $lightest-gray;
   
   > div {
+    position: relative;
     display: inherit;
     flex-direction: column;
     align-items: inherit;
@@ -111,6 +112,7 @@ body, textarea {
   background-color: white;
   border-bottom: 1px solid $border-gray;
   justify-content: space-between;
+  z-index: 1;
 
   * {
     display: inherit;

@@ -50,8 +50,12 @@ class Post extends React.Component {
                 <img key={i} src={url} className={`${i === 0 ? 'active' : ''}`} id={`${i}`} />
               </div>
             ))}
-          <a className="prev">❮</a>
-          <a className="next">❯</a>
+            { imageUrls.length === 0 ? "" :
+              <>
+                <a className="prev hidden">❮</a>
+                <a className="next">❯</a>
+              </>
+            }
           </div>
         </div>
         <div className='text-container'>
