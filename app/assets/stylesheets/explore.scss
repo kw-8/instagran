@@ -8,13 +8,15 @@ $list-width: 50vw;
 $basic-padding: 20px;
 
 #post-form {
-  margin: 2em;
-  margin-top: calc(50px + 2em);
+  position: fixed;
+  z-index: 1;
+  top: calc(50vh - 250px);
+  height: min(500px, calc(100vw - 40px));
   padding: $basic-padding;
   border: 1px solid $border-gray;
   box-sizing: border-box;
   background-color: white;
-  width: $list-width;
+  width: min(500px, calc(100vw - 40px));
   
   h3 {font-weight: 500;}
   input {width: 60%;}
@@ -29,25 +31,35 @@ $basic-padding: 20px;
 #explore {
   height: fit-content;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   
   ul {
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: calc(min(100vw - 40px, 70vw));
     
     .post-item {
-      margin-bottom: 2em;
+      margin: max(20px, 20vw);
+      margin-top: 0;
+      margin-bottom: 20px;
       border: 1px solid $border-gray;
       border-radius: $sharp-corner;
       box-sizing: border-box;
       padding: $basic-padding;
-      width: $list-width;
+      width: inherit;
       height: fit-content;
       display: flex;
       flex-direction: column;
 
       background-color: white;
       color: $basic-text;
+
+      .img-div {
+        max-height: calc(0.6 * (100vw - 60px));
+      }
     }
   }
 }
