@@ -47,7 +47,7 @@ class Post extends React.Component {
           <div className='images-box'>
             {imageUrls.map((url, i) => (
               <div className="img-div">
-                <img key={i} src={url} className={`${i === 0 ? 'active' : ''}`} />
+                <img key={i} src={url} className={`${i === 0 ? 'active' : ''}`} id={`${i}`} />
               </div>
             ))}
           <a className="prev">❮</a>

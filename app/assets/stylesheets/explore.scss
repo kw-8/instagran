@@ -36,10 +36,6 @@ $basic-padding: 20px;
     align-items: center;
     flex-direction: column;
     
-    img {
-      width: 100%;
-    }
-    
     .post-item {
       margin-bottom: 2em;
       border: 1px solid $border-gray;
@@ -48,7 +44,6 @@ $basic-padding: 20px;
       padding: $basic-padding;
       width: $list-width;
       height: fit-content;
-      // margin-top: calc(2em);
       display: flex;
       flex-direction: column;
 

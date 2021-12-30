@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .comments-container {
+  overflow-x: scroll;
+
   * {
     text-align: left;
     padding: 0;

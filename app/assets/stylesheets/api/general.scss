@@ -12,29 +12,7 @@ $sharp-corner: 2px;
 $round-corner: 3px;
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-.pictures::-webkit-scrollbar,
+::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-  border-left: 1px solid $border-gray;
-  background-color: transparent;
-  // -webkit-border-radius: 100px;
-}
-/* hover effect for both scrollbar area, and scrollbar 'thumb' */
-::-webkit-scrollbar:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-/* The scrollbar 'thumb' ...that marque oval shape in a scrollbar */
-::-webkit-scrollbar-thumb {
-  /* This is the EXACT color of Mac OS scrollbars. 
-     Yes, I pulled out digital color meter */
-  background: rgba(0,0,0,0.3);
-  -webkit-border-radius: 100px;
-}
-::-webkit-scrollbar-thumb:active {
-  background: rgba(0,0,0,0.4); /* Some darker color when you click it */
-  -webkit-border-radius: 100px;
 }
