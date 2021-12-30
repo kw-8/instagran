@@ -20,11 +20,12 @@ a.bold-link {
   border-radius: $sharp-corner;
   color: $basic-text;
   box-sizing: border-box;
-  width: 70%;
-  height: 80vh;
+  max-width: 800px;
+  max-height: calc(min(1200px, 60vw));
   display: flex;
   flex-direction: row;
-  margin-top: 6em;
+  margin: 20px;
+  margin-top: calc(50px + 20px);
   
   .image-container, .text-container {
     background-color: white;
@@ -43,6 +44,7 @@ a.bold-link {
   
   .image-container {
     width: 60%;
+    background-color: transparent;
   }
   .user-box, .description-container {
     border-bottom: 1px solid $mid-gray;

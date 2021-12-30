@@ -43,8 +43,16 @@ class Post extends React.Component {
     return (
       <div className={div_name} key={`post-${id}`} >
         { div_name === 'post-item' ?  user_box : '' }
-        <div className='image-container'>
-          {imageUrls.map((url, i) => <img key={i} src={url} />)}
+        <div className="image-container">
+          <div className='images-box'>
+            {imageUrls.map((url, i) => (
+              <div className="img-div">
+                <img key={i} src={url} className={`${i === 0 ? 'active' : ''}`} />
+              </div>
+            ))}
+          <a className="prev">❮</a>
+          <a className="next">❯</a>
+          </div>
         </div>
         <div className='text-container'>
           { div_name === 'post' ? user_box : '' }
