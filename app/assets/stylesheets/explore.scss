@@ -7,22 +7,6 @@ $round-corner: 3px;
 $list-width: 50vw;
 $basic-padding: 20px;
 
-#post-form {
-  position: fixed;
-  z-index: 1;
-  top: calc(50vh - 250px);
-  height: min(500px, calc(100vw - 40px));
-  padding: $basic-padding;
-  border: 1px solid $border-gray;
-  box-sizing: border-box;
-  background-color: white;
-  width: min(500px, calc(100vw - 40px));
-  
-  h3 {font-weight: 500;}
-  input {width: 60%;}
-  textarea {width: 38%; height: 100%;}
-}
-
 .user-box {
   display: flex;
   justify-content: space-between;
@@ -35,7 +19,8 @@ $basic-padding: 20px;
   flex-direction: column;
   align-items: center;
   
-  ul {
+  > ul {
+    margin-top: 70px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -50,6 +35,7 @@ $basic-padding: 20px;
       box-sizing: border-box;
       padding: $basic-padding;
       width: inherit;
+      max-width: 800px;
       height: fit-content;
       display: flex;
       flex-direction: column;
@@ -59,6 +45,10 @@ $basic-padding: 20px;
 
       .img-div {
         max-height: calc(0.6 * (100vw - 60px));
+      }
+
+      .description-container {
+        margin-top: 6px;
       }
     }
   }

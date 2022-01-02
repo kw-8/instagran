@@ -3,13 +3,32 @@ $mid-gray: rgb(238, 238, 238);
 $border-gray: lightgray;
 $bright-blue: rgb(0, 149, 246);
 $basic-text: rgb(38, 38, 38);
+$basic-padding: 20px;
 $sharp-corner: 2px;
 $round-corner: 3px;
 
 #post-form {
+  position: fixed;
+  z-index: 1;
+  top: calc(50vh - 250px);
+  height: min(500px, calc(100vw - 40px));
+  padding: $basic-padding;
+  border: 1px solid $border-gray;
+  box-sizing: border-box;
+  background-color: white;
+  width: min(500px, calc(100vw - 40px));
+  
+  h3 {font-weight: 500;}
+  input {width: 60%;}
   textarea {
+    width: 38%;
+    height: 100%;
     resize: none;
     border: 1px solid $mid-gray;
     border-radius: $sharp-corner;
   }
+
+
+
+  visibility: hidden;
 }
