@@ -33,7 +33,7 @@ $basic-padding: 20px;
       border: 1px solid $border-gray;
       border-radius: $sharp-corner;
       box-sizing: border-box;
-      padding: $basic-padding;
+      // padding: $basic-padding;
       width: inherit;
       max-width: 800px;
       height: fit-content;
@@ -42,6 +42,8 @@ $basic-padding: 20px;
 
       background-color: white;
       color: $basic-text;
+
+      .user-box, .text-container { padding: $basic-padding; }
 
       .img-div {
         max-height: calc(0.6 * (100vw - 60px));
