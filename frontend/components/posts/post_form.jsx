@@ -7,6 +7,7 @@ class PostForm extends React.Component {
     this.state = this.props.post;
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.hideForm = this.hideForm.bind(this);
   }
 
   componentDidMount() {
@@ -43,6 +44,11 @@ class PostForm extends React.Component {
     this.props.submitPost(formData)
   }
 
+  hideForm(postType) {
+    // e.preventDefault();
+    document.querySelector(`#post-form.${postType}`).setAttribute('style', 'visibility: hidden');
+  }
+
   render() {
     if (!this.state) {
       return null;
@@ -51,9 +57,10 @@ class PostForm extends React.Component {
     return (
       <>
       { postType === 'new_post' || this.state.posterId === this.props.currentUserId ? (
-        <div id='post-form' >
+        <div id='post-form' className={postType}>
           <div>
             <h3>{postType === 'new_post' ? 'Create new post' : 'Edit post'}</h3>
+              <button className="close-div" onClick={() => this.hideForm(postType)}>x</button>
             <form>
               <input
                 type="file"

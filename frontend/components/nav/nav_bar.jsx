@@ -5,11 +5,18 @@ class NavBar extends React.Component {
   constructor(props){
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
+    this.showCreatePost = this.showCreatePost.bind(this);
   }
 
   handleLogout(e) {
     e.preventDefault();
     this.props.logout();
+  }
+
+  showCreatePost(e) {
+    e.preventDefault()
+    document.querySelector('.new_post').setAttribute('style', 'visibility: visible');
+    console.log('change')
   }
 
   render() {// fix cond
@@ -23,6 +30,7 @@ class NavBar extends React.Component {
             <>
               <h3>{un}</h3>
               <Link to='/explore'>Home</Link>
+              <button onClick={this.showCreatePost}>Post</button>
               <button onClick={this.handleLogout}>Logout</button>
             </>
           :
