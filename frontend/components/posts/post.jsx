@@ -6,6 +6,7 @@ import CommentsContainer from "../comments/comments_container";
 class Post extends React.Component {
   constructor(props) {
     super(props)
+    this.showEditForm = this.showEditForm.bind(this);
   }
 
   componentDidMount() {
@@ -14,6 +15,11 @@ class Post extends React.Component {
       this.props.getPost(this.props.postId) //this.props.match.params.postId
         .then(() => console.log(this.props.post.description))
     }
+  }
+
+  showEditForm(e) {
+    e.preventDefault()
+    document.querySelector('.edit_post').setAttribute('style', 'visibility: visible');
   }
 
   render() {
@@ -29,12 +35,15 @@ class Post extends React.Component {
           {/* <UserInfoContainer userId='post.posterId'></UserInfoContainer> */}
           {user_link}
         </div>
-        {/* refactor link to modal later */}
         <div>
           { this.props.type === 'list_item' ?
-            <Link to={`/posts/${id}`} className="x" className='bold-link'>{'link '}</Link> : ''}
-          { parseInt(this.props.post.posterId) === this.props.currentUserId ?
-            <Link to="/" className="x" className='bold-link' onClick={() => deletePost(post.id)}>x</Link> : ''}
+            <Link to={`/posts/${id}`} className="x" className='bold-link'>{'Go to Post'}</Link> : ''}
+          {parseInt(this.props.post.posterId) === this.props.currentUserId && this.props.type !== 'list_item' ?
+            <a className="x" onClick={this.showEditForm}>Edit</a>
+            : ""
+          }
+          { parseInt(this.props.post.posterId) === this.props.currentUserId ? 
+            <Link to="/" className="x" className='bold-link' onClick={() => deletePost(post.id)}>Delete</Link> : ''}
         </div>
       </div>
     )

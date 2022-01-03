@@ -16,7 +16,6 @@ class NavBar extends React.Component {
   showCreatePost(e) {
     e.preventDefault()
     document.querySelector('.new_post').setAttribute('style', 'visibility: visible');
-    console.log('change')
   }
 
   render() {// fix cond
