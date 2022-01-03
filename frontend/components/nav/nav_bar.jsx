@@ -17,7 +17,7 @@ class NavBar extends React.Component {
   toggleNavMenu(e) {
     e.preventDefault()
     let menu = document.querySelector('.nav-dropdown-menu');
-    if (menu.style['visibility'] === "hidden") {
+    if (menu.style['visibility'] && menu.style['visibility'] === "hidden") {
       menu.setAttribute('style', 'visibility: visible');
     } else {
       menu.setAttribute('style', 'visibility: hidden');
