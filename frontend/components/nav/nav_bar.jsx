@@ -5,12 +5,23 @@ class NavBar extends React.Component {
   constructor(props){
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
+    this.toggleNavMenu = this.toggleNavMenu.bind(this);
     this.showCreatePost = this.showCreatePost.bind(this);
   }
 
   handleLogout(e) {
     e.preventDefault();
     this.props.logout();
+  }
+
+  toggleNavMenu(e) {
+    e.preventDefault()
+    let menu = document.querySelector('.nav-dropdown-menu');
+    if (menu.style['visibility'] === "hidden") {
+      menu.style('style', 'visibility: visible');
+    } else {
+      menu.setAttribute('style', 'visibility: hidden');
+    }
   }
 
   showCreatePost(e) {
@@ -29,8 +40,16 @@ class NavBar extends React.Component {
             <>
               <h3>{un}</h3>
               <Link to='/explore'>Home</Link>
-              <button onClick={this.showCreatePost}>Post</button>
-              <button onClick={this.handleLogout}>Logout</button>
+              <a onClick={this.showCreatePost}>Post</a>
+              <div className="nav-dropdown-container">
+                <div className="nav-user-icon">
+                  <div onClick={this.toggleNavMenu}></div>
+                  <div className="nav-dropdown-menu">
+                    <Link to={`/user/${this.props.currentUser.id}`}>Profile</Link>
+                    <button onClick={this.handleLogout}>Logout</button>
+                  </div>
+                </div>
+              </div>
             </>
           :
             <>

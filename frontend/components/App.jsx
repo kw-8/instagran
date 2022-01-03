@@ -21,13 +21,16 @@ const App = () => (
     <AuthRoute exact path="/" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
 
-    {/* access nav from anywhere */}
+    {/* IF LOGGED IN */}
     <ProtectedRoute path="/" component={NavBarContainer} />
     <ProtectedRoute path="/" component={NewPostContainer} />
     
     <ProtectedRoute exact path="/explore" component={ExploreContainer} />
 
+    {/* <ProtectedRoute exact path="/user/:userId" component={} /> */}
+
     <ProtectedRoute exact path="/posts/:postId" component={EditPostContainer} />
+    
     <Route exact path="/posts/:postId" component={PostContainer} />
   </div>
 );
