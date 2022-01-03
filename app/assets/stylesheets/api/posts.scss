@@ -15,6 +15,34 @@ a.bold-link {
   font-weight: 600;
 }
 
+.post-dropdown {
+  display: flex;
+  flex-direction: column;
+  > a { text-align: right; }
+  div {
+    position: absolute;
+    visibility: hidden;
+    
+    display: flex;
+    flex-direction: column;
+    transform: translate(-80px, 20px);
+    width: 100px;
+
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: 1px solid lightgray;
+    background-color: white;
+    z-index: 1;
+    
+    a {
+      padding: 10px;
+      font-weight: 300;
+      border-bottom: 1px solid lightgray;
+    }
+    a:last-child {border-bottom: none;}
+  }
+}
+
 .post {
   border: 1px solid $border-gray;
   border-radius: $sharp-corner;

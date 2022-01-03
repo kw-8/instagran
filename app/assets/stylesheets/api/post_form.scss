@@ -17,6 +17,7 @@ $round-corner: 3px;
   box-sizing: border-box;
   background-color: white;
   width: min(500px, calc(100vw - 40px));
+  z-index: 2;
   
   h3 {font-weight: 500;}
   input {width: 60%;}

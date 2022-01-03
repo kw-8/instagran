@@ -7,6 +7,7 @@ class Post extends React.Component {
   constructor(props) {
     super(props)
     this.showEditForm = this.showEditForm.bind(this);
+    this.togglePostDropdown = this.togglePostDropdown.bind(this);
   }
 
   componentDidMount() {
@@ -22,6 +23,16 @@ class Post extends React.Component {
     document.querySelector('.edit_post').setAttribute('style', 'visibility: visible');
   }
 
+  togglePostDropdown(e) {
+    e.preventDefault()
+    let menu = document.querySelector(`.post-dropdown.post-${this.props.postId} > div`);
+    if (menu.style['visibility'] && menu.style['visibility'] === "hidden") {
+      menu.setAttribute('style', 'visibility: visible');
+    } else {
+      menu.setAttribute('style', 'visibility: hidden');
+    }
+  }
+
   render() {
     if (!this.props.post) {
       return 'Post Not Found';
@@ -35,15 +46,18 @@ class Post extends React.Component {
           {/* <UserInfoContainer userId='post.posterId'></UserInfoContainer> */}
           {user_link}
         </div>
-        <div>
-          { this.props.type === 'list_item' ?
-            <Link to={`/posts/${id}`} className="x" className='bold-link'>{'Go to Post'}</Link> : ''}
-          {parseInt(this.props.post.posterId) === this.props.currentUserId && this.props.type !== 'list_item' ?
-            <a className="x" onClick={this.showEditForm}>Edit</a>
-            : ""
-          }
-          { parseInt(this.props.post.posterId) === this.props.currentUserId ? 
-            <Link to="/" className="x" className='bold-link' onClick={() => deletePost(post.id)}>Delete</Link> : ''}
+        <div className={`post-dropdown post-${this.props.postId}`}>
+          <a onClick={this.togglePostDropdown}>•••</a>
+          <div>
+            {this.props.type === 'list_item' ?
+              <Link to={`/posts/${id}`} className="x" className='bold-link'>{'Go to Post'}</Link> : ''}
+            {parseInt(this.props.post.posterId) === this.props.currentUserId && this.props.type !== 'list_item' ?
+              <a className="x" onClick={this.showEditForm}>Edit</a>
+              : ""
+            }
+            {parseInt(this.props.post.posterId) === this.props.currentUserId ?
+              <Link to="/" className="x" className='bold-link' onClick={() => deletePost(post.id)}>Delete</Link> : ''}
+          </div>
         </div>
       </div>
     )

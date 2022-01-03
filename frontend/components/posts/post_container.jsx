@@ -8,7 +8,7 @@ import {
 
 const mSTP = (state, ownProps) => {
   let post = ownProps.post || state.entities.posts[ownProps.match.params.postId]
-  let postId = ownProps.match ? ownProps.match.params.postId : ''
+  let postId = ownProps.match ? ownProps.match.params.postId : ownProps.postId
   let currentUserId = state.session.currentUser ? state.session.currentUser.id : ''
   return { // first pass, post DNI, second pass received post, now in state
     currentUserId,

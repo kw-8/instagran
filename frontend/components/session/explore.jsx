@@ -19,6 +19,7 @@ class Explore extends React.Component {
             posts.map(post => (
                 <PostContainer
                   key={post.id}
+                  postId={post.id}
                   post={post}
                   type='list_item'
                 />
