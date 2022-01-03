@@ -1,28 +1,36 @@
-#nav-bar .nav-dropdown-container {
-  .nav-user-icon > div:first-child {
-    border: 1px solid lightgray;
-    border-radius: 50%;
-    height: 36px;
-    width: 36px;
-    background: #f09433; 
-    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
-    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+#nav-bar {
+  a img {
+    height: 30px;
+    width: 30px;
   }
-  .nav-dropdown-menu {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding: 6px;
-    width: 100px;
-    top: 50px;
+  .nav-dropdown-container {
+    padding:2px;
     
-    background-color: white;
-    border: 1px solid lightgray;
+    .nav-user-icon > div:first-child {
+      border: 1px solid lightgray;
+      border-radius: 50%;
+      height: 36px;
+      width: 36px;
+      background: #f09433; 
+      background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+      background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+      background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    }
+    .nav-dropdown-menu {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      padding: 6px;
+      width: 160px;
+      top: 50px;
+      
+      background-color: white;
+      border: 1px solid lightgray;
 
-    transform: translate(-30px);
-    visibility: hidden;
+      transform: translate(-80px);
+      visibility: hidden;
+    }
   }
 }

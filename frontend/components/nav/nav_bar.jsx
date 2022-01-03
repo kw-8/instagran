@@ -38,13 +38,17 @@ class NavBar extends React.Component {
         <div id='nav-links'>
           {un != null ?
             <>
-              <h3>{un}</h3>
-              <Link to='/explore'>Home</Link>
-              <a onClick={this.showCreatePost}>Post</a>
+              <Link to='/explore'>
+                <img src="assets/home.png"/>
+              </Link>
+              <a onClick={this.showCreatePost}>
+                <img src="assets/post.png"/>
+              </a>
               <div className="nav-dropdown-container">
                 <div className="nav-user-icon">
                   <div onClick={this.toggleNavMenu}></div>
                   <div className="nav-dropdown-menu">
+                    <h3>{un}</h3>
                     <Link to={`/user/${this.props.currentUser.id}`}>Profile</Link>
                     <button onClick={this.handleLogout}>Logout</button>
                   </div>
