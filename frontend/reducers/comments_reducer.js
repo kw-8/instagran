@@ -24,7 +24,7 @@ export default (state = nullComment.comments, action) => {
       });
       return comments;
     case RECEIVE_POST:
-      Object.values(action.payload.comments).forEach(comment => {
+      if (action.payload.comments) Object.values(action.payload.comments).forEach(comment => {
         comments[comment.id] = comment
       });
       // debugger
