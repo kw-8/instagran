@@ -9,8 +9,8 @@ class Api::PostsController < ApplicationController
   end
 
   def show
-    p 'PARAMS, show'
-    p params
+    # p 'PARAMS, show'
+    # p params
     @post = Post.with_attached_images.find(params[:id])
     if @post
       @comments = @post.comments
@@ -32,6 +32,7 @@ class Api::PostsController < ApplicationController
   end
 
   def destroy
+    p Post.all
     @post = Post.find(params[:id])
     @post.destroy
     render :index

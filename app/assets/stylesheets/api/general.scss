@@ -11,6 +11,10 @@ $basic-text: rgb(38, 38, 38);
 $sharp-corner: 2px;
 $round-corner: 3px;
 
+a:hover {
+  cursor: pointer;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar,
 body::-webkit-scrollbar {

@@ -50,7 +50,7 @@ class NavBar extends React.Component {
                   <div className="nav-dropdown-menu">
                     <h3>{un}</h3>
                     <Link to={`/user/${this.props.currentUser.id}`}>Profile</Link>
-                    <button onClick={this.handleLogout}>Logout</button>
+                    <a onClick={this.handleLogout}>Logout</a>
                   </div>
                 </div>
               </div>
