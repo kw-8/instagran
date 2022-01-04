@@ -38,6 +38,7 @@ class Post extends React.Component {
       return 'Post Not Found';
     }
     const { post, deletePost, comments, postId } = this.props
+    console.log("comments for", postId, comments)
     const { id, description, imageUrls, posterId } = post;
     const user_link = (<Link to='/' className='bold-link'>username here</Link>)
     const user_box = (

@@ -18,7 +18,6 @@ export default (state = nullComment.comments, action) => {
   let nextState = Object.assign({}, state);
   switch(action.type) {
     case RECEIVE_POSTS:
-      // debugger
       Object.values(action.payload.comments).forEach(comment => {
         comments[comment.id] = comment
       });
@@ -27,15 +26,16 @@ export default (state = nullComment.comments, action) => {
       if (action.payload.comments) Object.values(action.payload.comments).forEach(comment => {
         comments[comment.id] = comment
       });
-      // debugger
       return comments;
     case RECEIVE_COMMENTS:
-      // debugger
+      debugger
       return Object.assign(nextState, action.payload.comments);
     case RECEIVE_COMMENT:
+      debugger
       nextState[action.comment.id] = action.comment;
       return nextState;
     case REMOVE_COMMENT:
+      debugger
       delete nextState[action.comment.id]
       return nextState
     default:

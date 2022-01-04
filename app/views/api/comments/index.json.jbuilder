@@ -1,3 +1,5 @@
-json.array! @comments do |comment|
-  json.partial! `api/posts/#{comment.postId}/comments/#{comment.id}`, comment: comment
+@comments.each do |comment|
+  json.set! comment.id do
+    json.extract! comment, :id, :post_id, :commenter_id, :body
+  end
 end

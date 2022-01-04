@@ -42,7 +42,10 @@ export const getPost = id => dispatch => {
 
 export const createPost = formInput => dispatch => {
   return POSTUtil.createPost(formInput).then(
-    post => dispatch(receivePost(post))
+    post => {
+      debugger
+      return dispatch(receivePost(post))
+    }
   )
 }
 
@@ -55,6 +58,7 @@ export const updatePost = formInput => dispatch => {
 
 export const deletePost = id => dispatch => {
   return POSTUtil.deletePost(id).then(
+    post => console.log(post),
     post => dispatch(removePost(post)),
     errors => dispatch(receivePostErrors(errors))
   )

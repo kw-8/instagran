@@ -7,7 +7,8 @@ import {
 import Comments from "./comments";
 
 const mSTP = (state, ownProps) => ({
-  currentUserId: state.session.currentUser.id
+  currentUserId: state.session.currentUser.id,
+  comments: Object.values(state.entities.comments)
 })
 
 const mDTP = dispatch => ({

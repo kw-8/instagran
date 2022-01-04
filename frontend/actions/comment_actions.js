@@ -23,10 +23,9 @@ export const receiveCommentErrors = errors => ({
 });
 
 
-export const createComment = ( {comment} ) => dispatch => {
-  return CommentUtil.createComment(comment)
+export const createComment = (newComment) => dispatch => {
+  return CommentUtil.createComment(newComment)
     .then(comment => dispatch(receiveComment(comment)))
-    // .then(comment => console.log('asdhfjkl', (comment)))
 }
 
 export const getComments = postId => dispatch => {

@@ -14,12 +14,11 @@ class Comments extends React.Component {
     e.preventDefault();
     // debugger
     const { postId, currentUserId } = this.props;
-    let newComment = {
+    this.props.createComment({
       commenter_id: currentUserId,
       post_id: postId,
       body: document.querySelector(`#new-comment-${this.props.postId}`).value
-    }
-    this.props.createComment({comment: newComment})
+    })
     // this.setState(this.state);
   }
 
