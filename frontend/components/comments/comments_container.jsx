@@ -6,7 +6,9 @@ import {
 } from "../../actions/comment_actions";
 import Comments from "./comments";
 
-const mSTP = (state, ownProps) => ({})
+const mSTP = (state, ownProps) => ({
+  currentUserId: state.session.currentUser.id
+})
 
 const mDTP = dispatch => ({
   createComment: (comment) => dispatch(createComment(comment)),

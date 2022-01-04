@@ -9,6 +9,10 @@ export const receiveComments = comments => ({
   type: RECEIVE_COMMENTS,
   comments
 });
+export const receiveComment = comment => ({
+  type: RECEIVE_COMMENT,
+  comment
+});
 export const removeComment = comment => ({
   type: REMOVE_COMMENT,
   comment

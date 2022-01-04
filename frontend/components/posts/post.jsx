@@ -37,7 +37,7 @@ class Post extends React.Component {
     if (!this.props.post) {
       return 'Post Not Found';
     }
-    const { post, deletePost, comments } = this.props
+    const { post, deletePost, comments, postId } = this.props
     const { id, description, imageUrls, posterId } = post;
     const user_link = (<Link to='/' className='bold-link'>username here</Link>)
     const user_box = (
@@ -88,7 +88,7 @@ class Post extends React.Component {
             {description}
           </div>
           <div className='comments-container'>
-            <CommentsContainer comments={comments} />
+            <CommentsContainer comments={comments} postId={postId} />
           </div>
         </div>
       </div>

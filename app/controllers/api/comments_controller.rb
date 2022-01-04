@@ -1,8 +1,8 @@
 class Api::CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
-    if @user.save
-      render :show
+    if @comment.save
+      render :index
     else
       render json: @user.errors.full_messages, status: 422
     end
@@ -16,7 +16,7 @@ class Api::CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     if @comment.destroy
-      redirect_to post_url(@comment.post_id)
+      render :index
     else
       render plain: "Nothing to delete."
     end
