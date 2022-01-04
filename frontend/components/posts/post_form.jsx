@@ -42,6 +42,7 @@ class PostForm extends React.Component {
       }
     }
     this.props.submitPost(formData)
+    this.hideForm(this.props.postType)
   }
 
   hideForm(postType) {

@@ -43,7 +43,6 @@ export const getPost = id => dispatch => {
 export const createPost = formInput => dispatch => {
   return POSTUtil.createPost(formInput).then(
     post => {
-      debugger
       return dispatch(receivePost(post))
     }
   )

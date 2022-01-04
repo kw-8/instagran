@@ -17,11 +17,11 @@ export default (state = nullComment.comments, action) => {
 
   let nextState = Object.assign({}, state);
   switch(action.type) {
-    case RECEIVE_POSTS:
-      Object.values(action.payload.comments).forEach(comment => {
-        comments[comment.id] = comment
-      });
-      return comments;
+    // case RECEIVE_POSTS:
+    //   Object.values(action.payload.comments).forEach(comment => {
+    //     comments[comment.id] = comment
+    //   });
+    //   return comments;
     case RECEIVE_POST:
       if (action.payload.comments) Object.values(action.payload.comments).forEach(comment => {
         comments[comment.id] = comment
