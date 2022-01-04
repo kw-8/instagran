@@ -81,14 +81,11 @@ a.bold-link {
   
   .user-box, .description-container {
     border-bottom: 1px solid $mid-gray;
-    padding: 16px;
+    padding: 10px;
   }
   .comments-container {
     height: fit-content;
     flex-grow: 1;
-    > * {
-      padding: 20px;
-    }
     > .new-comment {
       border-top: 1px solid $mid-gray;
     }

@@ -5,7 +5,7 @@ $basic-text: rgb(38, 38, 38);
 $sharp-corner: 2px;
 $round-corner: 3px;
 $list-width: 50vw;
-$basic-padding: 20px;
+$basic-padding: 10px;
 
 .user-box {
   display: flex;
@@ -42,8 +42,6 @@ $basic-padding: 20px;
 
       background-color: white;
       color: $basic-text;
-
-      .user-box, .text-container { padding: $basic-padding; }
 
       .img-div {
         max-height: calc(0.6 * (100vw - 60px));

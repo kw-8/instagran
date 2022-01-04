@@ -12,7 +12,7 @@ $round-corner: 3px;
 body, textarea {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
   color: $basic-text;
-  font-size: 14px;
+  font-size: 11px;
 }
 #root {
   display: flex;
@@ -62,7 +62,7 @@ body, textarea {
         background-color: $lightest-gray;
       }
       .logo {
-        font-size: 50px;
+        font-size: 40px;
         margin-bottom: .8em;
       }
       
@@ -121,7 +121,7 @@ body, textarea {
   }
 
   .logo, .logo > a {
-    font-size: 26px;
+    // font-size: 20px;
     color: $basic-text;
     text-decoration: none;
   }
