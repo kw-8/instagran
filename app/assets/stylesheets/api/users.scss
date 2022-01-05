@@ -28,8 +28,8 @@
     border-bottom: 1px solid lightgray;
     > * {
       margin-left: calc( min(120px, 30vw) + 10px );
-      min-width: min(500px, 100vw - 10px);
-      max-width: min(500px, 100vw - 10px);
+      min-width: min(70vw - 130px, 100vw - 10px);
+      max-width: min(70vw - 130px, 100vw - 10px);
     }
     .pfp {
       position: absolute;
@@ -41,7 +41,9 @@
       background-color: cornflowerblue;
     }
   }
-  .profile-grid {width: 100%;}
+  .profile-grid {
+    width: 100%;
+  }
 }
 
 
@@ -60,6 +62,8 @@
       }
       .user-stats, .user-text {
         margin-left: 0;
+        min-width: calc(100vw - 20px);
+        max-width: calc(100vw - 20px);
       }
     }
   }
