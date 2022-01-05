@@ -8,7 +8,7 @@ import Comments from "./comments";
 
 const mSTP = (state, ownProps) => ({
   currentUserId: state.session.currentUser.id,
-  comments: Object.values(state.entities.comments)
+  comments: Object.values(state.entities.comments).filter(comment => comment.postId === parseInt(ownProps.postId))
 })
 
 const mDTP = dispatch => ({

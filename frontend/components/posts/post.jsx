@@ -14,8 +14,9 @@ class Post extends React.Component {
     // fetch a post *unless* given prop type: i.e. list_item
     if (!this.props.type) {
       this.props.getPost(this.props.postId) //this.props.match.params.postId
-        .then(() => console.log(this.props.post.description))
+        // .then(() => console.log(this.props.post.description))
     }
+    this.props.getComments(this.props.postId)
   }
 
   showEditForm(e) {

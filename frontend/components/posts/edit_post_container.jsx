@@ -3,6 +3,9 @@ import {
   getPost,
   updatePost
 } from "../../actions/post_actions";
+import {
+  getComments
+} from "../../actions/comment_actions"
 import PostForm from "./post_form";
 
 const mapStateToProps = (state, ownProps) => {
@@ -14,6 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => ({
+  // getComments: postId => dispatch(getComments(postId)),
   getPost: postId => dispatch(getPost(postId)),
   submitPost: post => dispatch(updatePost(post))
 })

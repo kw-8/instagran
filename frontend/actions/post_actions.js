@@ -42,9 +42,7 @@ export const getPost = id => dispatch => {
 
 export const createPost = formInput => dispatch => {
   return POSTUtil.createPost(formInput).then(
-    post => {
-      return dispatch(receivePost(post))
-    }
+    post => dispatch(receivePost(post))
   )
 }
 
