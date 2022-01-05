@@ -2,7 +2,9 @@ import { connect } from "react-redux"
 import ProfileHeader from "./profile_header"
 
 const mSTP = (state, ownProps) => ({
-  // userId = ownProps.match.params.userId
+  currentUser: state.session.currentUser,
+  userId: ownProps.userId,
+  user: ownProps.user
 })
 
 const mDTP = dispatch => ({})

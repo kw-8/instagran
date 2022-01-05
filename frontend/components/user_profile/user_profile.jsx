@@ -11,7 +11,7 @@ class UserProfile extends React.Component {
   componentDidMount() {
     // debugger
     let { userId, users, getUser } = this.props
-    if (!users[userId]) getUser(userId)
+    getUser(userId)
   }
 
   render() {
@@ -20,7 +20,7 @@ class UserProfile extends React.Component {
     if (!users[userId]) return null;
     return (
       <div className="user-profile">
-        <ProfileHeaderContainer />
+        <ProfileHeaderContainer userId={userId} user={users[userId]} />
         <ProfileGridContainer />
       </div>
     )
