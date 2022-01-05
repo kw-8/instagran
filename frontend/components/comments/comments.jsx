@@ -30,7 +30,7 @@ class Comments extends React.Component {
       post_id: postId,
       body: document.querySelector(`#new-comment-${this.props.postId}`).value
     })
-    // this.setState(this.state);
+    document.querySelector(`#new-comment-${this.props.postId}`).value = ''
   }
 
   update(field) {
@@ -61,7 +61,7 @@ class Comments extends React.Component {
                   <a className="toggle-button" onClick={() => this.toggleCommentDropdown(comment.id)}>
                     •••
                   </a>
-                  <div className="comment-dropdown">
+                  <div className="comment-dropdown dropdown">
                     <a onClick={() => this.props.deleteComment({id: comment.id} )}>
                       Delete
                     </a>
