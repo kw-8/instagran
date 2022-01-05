@@ -39,7 +39,7 @@ $basic-padding: 10px;
         .comment-dropdown {
           background: white;
           padding: 6px;
-          padding-top: 2px;
+          padding-top: 4px;
           padding-bottom: 2px;
           border: 1px solid lightgray;
           border-radius: 2px;
@@ -55,6 +55,7 @@ $basic-padding: 10px;
     padding: none;
     border-top: 1px solid $border-gray;
     input {
+      font-size: 11px;
       padding: $basic-padding;
       border: none;
       width: calc(100% - 60px);

@@ -47,7 +47,7 @@ class NavBar extends React.Component {
               <div className="nav-dropdown-container">
                 <div className="nav-user-icon">
                   <div onClick={this.toggleNavMenu}></div>
-                  <div className="nav-dropdown-menu">
+                  <div className="nav-dropdown-menu dropdown">
                     <h3>{un}</h3>
                     <Link to={`/user/${this.props.currentUser.id}`}>Profile</Link>
                     <a onClick={this.handleLogout}>Logout</a>

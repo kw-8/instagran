@@ -47,7 +47,7 @@ class Post extends React.Component {
           {/* <UserInfoContainer userId='post.posterId'></UserInfoContainer> */}
           {user_link}
         </div>
-        <div className={`post-dropdown post-${this.props.postId}`}>
+        <div className={`post-dropdown post-${this.props.postId} dropdown`}>
           <a onClick={this.togglePostDropdown}>•••</a>
           <div>
             {this.props.type === 'list_item' ?

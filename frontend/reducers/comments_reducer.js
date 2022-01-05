@@ -28,14 +28,14 @@ export default (state = nullComment.comments, action) => {
       });
       return comments;
     case RECEIVE_COMMENTS:
-      debugger
+      // debugger
       return Object.assign(nextState, action.payload.comments);
     case RECEIVE_COMMENT:
-      debugger
+      // debugger
       nextState[action.comment.id] = action.comment;
       return nextState;
     case REMOVE_COMMENT:
-      debugger
+      // debugger
       delete nextState[action.comment.id]
       return nextState
     default:
