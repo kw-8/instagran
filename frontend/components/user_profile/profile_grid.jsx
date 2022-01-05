@@ -8,8 +8,12 @@ class ProfileGrid extends React.Component {
   componentDidMount() { }
 
   render() {
+    let {postIds} = this.props;
     return (
-      <div className="profile-grid"></div>
+      <div className="profile-grid">
+        {postIds.map(postId => 
+          <p>{postId},</p>)}
+      </div>
     )
   }
 }

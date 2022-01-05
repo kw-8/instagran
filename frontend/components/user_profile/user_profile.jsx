@@ -9,8 +9,7 @@ class UserProfile extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
-    let { userId, users, getUser } = this.props
+    let {getUser, userId} = this.props;
     getUser(userId)
   }
 
@@ -21,7 +20,7 @@ class UserProfile extends React.Component {
     return (
       <div className="user-profile">
         <ProfileHeaderContainer userId={userId} user={users[userId]} />
-        <ProfileGridContainer />
+        <ProfileGridContainer postIds={users[userId]['postIds']} />
       </div>
     )
   }
