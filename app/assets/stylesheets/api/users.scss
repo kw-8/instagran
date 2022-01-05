@@ -1,3 +1,12 @@
 // Place all the styles related to the api::users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-profile {
+  min-height: calc(100vh - 50px);
+  width: 100vw;
+  .profile-header, .profile-grid {
+    min-height: 100px;
+    background-color: violet;
+  }
+}

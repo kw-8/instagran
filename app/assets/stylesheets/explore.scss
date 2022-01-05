@@ -20,7 +20,7 @@ $basic-padding: 10px;
   align-items: center;
   
   > ul {
-    margin-top: 70px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -49,6 +49,7 @@ $basic-padding: 10px;
 
       .description-container {
         margin-top: 6px;
+        margin-left: 10px;
       }
     }
   }
