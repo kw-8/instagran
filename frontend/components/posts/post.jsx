@@ -41,7 +41,7 @@ class Post extends React.Component {
     const { post, deletePost, comments, postId } = this.props
     console.log("comments for", postId, comments)
     const { id, description, imageUrls, posterId } = post;
-    const user_link = (<Link to='/' className='bold-link'>username here</Link>)
+    const user_link = (<Link to={`/user/${posterId}`} className='bold-link'>username here</Link>)
     const user_box = (
       <div className='user-box'>
         <div>

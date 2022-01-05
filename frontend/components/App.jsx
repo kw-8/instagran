@@ -15,6 +15,7 @@ import ExploreContainer from "./session/explore_container";
 import PostContainer from "./posts/post_container";
 import NewPostContainer from "./posts/new_post_container";
 import EditPostContainer from "./posts/edit_post_container";
+import UserProfileContainer from "./user_profile/user_profile_container";
 
 const App = () => (
   <div>
@@ -27,10 +28,10 @@ const App = () => (
     
     <ProtectedRoute exact path="/explore" component={ExploreContainer} />
 
-    {/* <ProtectedRoute exact path="/user/:userId" component={} /> */}
 
     <ProtectedRoute exact path="/posts/:postId" component={EditPostContainer} />
     
+    <Route exact path="/user/:userId" component={UserProfileContainer} />
     <Route exact path="/posts/:postId" component={PostContainer} />
   </div>
 );
