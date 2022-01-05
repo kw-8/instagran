@@ -8,9 +8,16 @@ class UserProfile extends React.Component {
     super(props)
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    // debugger
+    let { userId, users, getUser } = this.props
+    if (!users[userId]) getUser(userId)
+  }
 
   render() {
+    // debugger
+    let { userId, users } = this.props
+    if (!users[userId]) return null;
     return (
       <div className="user-profile">
         <ProfileHeaderContainer />

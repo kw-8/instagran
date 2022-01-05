@@ -10,9 +10,9 @@ const receivePosts = payload => ({
   type: RECEIVE_POSTS,
   payload
 });
-const receivePost = payload => ({
+const receivePost = post => ({
   type: RECEIVE_POST,
-  payload
+  post
 });
 const removePost = post => ({
   type: REMOVE_POST,
@@ -25,17 +25,16 @@ const receivePostErrors = errors => ({
 
 export const getPosts = () => dispatch => {
   return POSTUtil.getPosts().then(
-    payload => {
-      dispatch(receivePosts(payload))
+    posts => {
+      dispatch(receivePosts(posts))
     }
   )
 }
-
 export const getPost = id => dispatch => {
   return POSTUtil.getPost(id).then(
-    payload => {
+    post => {
       // debugger
-      dispatch(receivePost(payload))
+      dispatch(receivePost(post))
     }
   )
 }

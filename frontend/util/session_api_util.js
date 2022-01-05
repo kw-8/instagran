@@ -18,3 +18,35 @@ export const logout = () => {
     url: 'api/session'
   })
 }
+
+export const updateUser = user => {
+  return $.ajax({
+    method: 'patch',
+    url: `api/users/${user.id}`,
+    data: user,
+    contentType: false,
+    processData: false
+  })
+}
+
+// other user util actions
+export const getUser = userId => {
+  return $.ajax({
+    method: 'get',
+    url: `api/users/${userId}`
+  })
+}
+
+export const getUsers = () => {
+  return $.ajax({
+    method: 'get',
+    url: `api/users/`
+  })
+}
+
+export const deleteUser = userId => {
+  return $.ajax({
+    method: 'delete',
+    url: `api/users/${userId}`
+  })
+}
