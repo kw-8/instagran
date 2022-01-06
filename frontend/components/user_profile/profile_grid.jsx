@@ -1,18 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class ProfileGrid extends React.Component {
   constructor(props) {
     super(props)
   }
-
-  componentDidMount() { }
-
+  
   render() {
-    let {postIds} = this.props;
+    let {posts} = this.props;
+    if (!posts) return null;
+    console.log(posts)
+
     return (
       <div className="profile-grid">
-        {postIds.map(postId => 
-          <p>{postId},</p>)}
+        {posts.map(post =>
+          <div key={post.id} className="box">
+            <Link to={`/posts/${post.id}`}>
+              <img src={post.imageUrls[0]} />
+            </Link>
+          </div>
+        )}
       </div>
     )
   }

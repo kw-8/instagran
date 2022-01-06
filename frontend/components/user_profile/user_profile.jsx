@@ -20,7 +20,7 @@ class UserProfile extends React.Component {
     return (
       <div className="user-profile">
         <ProfileHeaderContainer userId={userId} user={users[userId]} />
-        <ProfileGridContainer postIds={users[userId]['postIds']} />
+        <ProfileGridContainer posts={users[userId]['posts']} />
       </div>
     )
   }
