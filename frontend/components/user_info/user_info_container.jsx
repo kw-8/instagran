@@ -4,9 +4,9 @@ import { connect } from "react-redux"
 import UserInfo from "./user_info"
 
 const mSTP = (state, ownProps) => ({
-  userId = ownProps.match.params.userId
+  user: ownProps.user
 })
 
-const mDTP = dispatch => ({})
+// const mDTP = dispatch => ({})
 
-export default connect(mSTP, mDTP)(UserInfo)
+export default connect(mSTP, null)(UserInfo)
