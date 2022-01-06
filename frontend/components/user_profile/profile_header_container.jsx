@@ -1,5 +1,6 @@
 import { connect } from "react-redux"
 import ProfileHeader from "./profile_header"
+import { updateUser } from "../../actions/session_actions"
 
 const mSTP = (state, ownProps) => ({
   currentUser: state.session.currentUser,
@@ -7,6 +8,8 @@ const mSTP = (state, ownProps) => ({
   user: ownProps.user
 })
 
-const mDTP = dispatch => ({})
+const mDTP = dispatch => ({
+  updateUser: user => dispatch(updateUser(user))
+})
 
 export default connect(mSTP, mDTP)(ProfileHeader)

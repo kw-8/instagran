@@ -3,6 +3,7 @@ import React from "react";
 class ProfileHeader extends React.Component {
   constructor(props) {
     super(props)
+    this.state = this.props.user;
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
@@ -20,7 +21,15 @@ class ProfileHeader extends React.Component {
     }
   }
 
-  handleSubmit(e) {}
+  handleSubmit(e) {
+    e.preventDefault()
+    const formData = new FormData();
+    formData.append('user[id]', this.state.id);
+    formData.append('user[username]', this.state.username);
+    formData.append('user[description]', this.state.description);
+    formData.append('user[full_name]', this.state.title);
+    this.props.updateUser(formData)
+  }
 
   render() {
     let {currentUser, user, userId} = this.props;
@@ -45,12 +54,13 @@ class ProfileHeader extends React.Component {
             id="user-title"
             placeholder="Add a title"
             value={user.title}
-            onChange={this.update('user-title')} />
+            onChange={this.update('title')} />
           <textarea
             id="user-description"
             placeholder="Add a description"
             value={user.description}
-            onChange={this.update('user-description')} />
+            onChange={this.update('description')} />
+          <button onClick={this.handleSubmit}>Update</button>
         </form>
       </div>
     )
