@@ -13,7 +13,7 @@ export default (state = nullPost, action) => {
   switch (action.type) {
     case RECEIVE_POST:
       // debugger;// action -> id
-      newState[action.payload.post.id] = action.payload.post;
+      newState[action.post.id] = action.post;
       return newState;
     case RECEIVE_POSTS:
       // debugger
