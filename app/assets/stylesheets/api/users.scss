@@ -4,7 +4,7 @@
 
 
 
-
+$header-width: min(70vw - 130px, 100vw - 10px);
 
 .user-profile {
   display: flex;
@@ -28,8 +28,8 @@
     border-bottom: 1px solid lightgray;
     > * {
       margin-left: calc( min(120px, 30vw) + 10px );
-      min-width: min(70vw - 130px, 100vw - 10px);
-      max-width: min(70vw - 130px, 100vw - 10px);
+      min-width: $header-width;
+      max-width: $header-width;
     }
     .pfp {
       position: absolute;
@@ -43,6 +43,20 @@
   }
   .profile-grid {
     width: 100%;
+    .box {
+      width: calc(0.33 * 70vw - 1px);
+      height: calc(0.33 * 70vw - 1px);
+      overflow: hidden;
+      margin: max(0.01%, 1px);
+      a {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+    .box:nth-child(3n-2) { margin-left: 0; }
+    .box:nth-child(3n) { margin-right: 0; }
   }
 }
 
