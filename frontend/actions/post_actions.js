@@ -33,7 +33,6 @@ export const getPosts = () => dispatch => {
 export const getPost = id => dispatch => {
   return POSTUtil.getPost(id).then(
     post => {
-      // debugger
       dispatch(receivePost(post))
     }
   )
@@ -54,7 +53,6 @@ export const updatePost = formInput => dispatch => {
 
 export const deletePost = id => dispatch => {
   return POSTUtil.deletePost(id).then(
-    post => console.log(post),
     post => dispatch(removePost(post)),
     errors => dispatch(receivePostErrors(errors))
   )

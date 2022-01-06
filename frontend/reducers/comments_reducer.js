@@ -13,7 +13,6 @@ const nullComment = { comments: {} }
 export default (state = nullComment.comments, action) => {
   // debugger
   Object.freeze(state);
-  const comments = {}
 
   let nextState = Object.assign({}, state);
   switch(action.type) {
