@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CommentsContainer from "../comments/comments_container";
-// import UserInfoContainer from "../user_info/user_info_container";
+import UserInfoContainer from "../user_info/user_info_container";
+import UserPfpContainer from "../user_info/user_pfp_container";
 
 class Post extends React.Component {
   constructor(props) {
@@ -13,8 +14,7 @@ class Post extends React.Component {
   componentDidMount() {
     // fetch a post *unless* given prop type: i.e. list_item
     if (!this.props.type) {
-      this.props.getPost(this.props.postId) //this.props.match.params.postId
-        // .then(() => console.log(this.props.post.description))
+      this.props.getPost(this.props.postId)
     }
     this.props.getComments(this.props.postId)
   }
@@ -39,14 +39,11 @@ class Post extends React.Component {
       return 'Post Not Found';
     }
     const { post, deletePost, comments, postId } = this.props
-    console.log("comments for", postId, comments)
     const { id, description, imageUrls, posterId } = post;
-    const user_link = (<Link to={`/user/${posterId}`} className='bold-link'>username here</Link>)
     const user_box = (
       <div className='user-box'>
         <div>
-          {/* <UserInfoContainer userId='post.posterId'></UserInfoContainer> */}
-          {user_link}
+          <UserInfoContainer userId={posterId}></UserInfoContainer>
         </div>
         <div className={`post-dropdown post-${this.props.postId} dropdown`}>
           <a onClick={this.togglePostDropdown}>•••</a>
@@ -86,7 +83,7 @@ class Post extends React.Component {
         <div className='text-container'>
           { div_name === 'post' ? user_box : '' }
           <div className='description-container'>
-            {user_link}
+            <UserInfoContainer posterId={post.posterId}></UserInfoContainer>
             {description}
           </div>
           <div className='comments-container'>

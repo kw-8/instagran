@@ -1,6 +1,6 @@
 import React from "react";
-import comments_container from "./comments_container";
 import { Link } from "react-router-dom";
+import UserInfoContainer from "../user_info/user_info_container";
 
 class Comments extends React.Component {
   constructor(props) {
@@ -43,7 +43,6 @@ class Comments extends React.Component {
 
   render() {
     const { comments, currentUserId } = this.props
-    const user_link = (<Link to='/' className='bold-link'>username here</Link>)
     // console.log('RENDER COMMENTS IN COMMENTS JSX', comments)
     return (
       <>
@@ -53,8 +52,9 @@ class Comments extends React.Component {
           <li key={comment.id} className={`comment-${comment.id}`}>
             <div>
               <div className="comment-text">
-                {user_link}
-                {comment.commenterId + ' ' + comment.body}
+                {/* this.props.postType === 'post' ? UserPfpContainer : null */}
+                <UserInfoContainer userId={comment.commenterId}></UserInfoContainer>
+                {comment.body}
               </div>
               {comment.commenterId === currentUserId ?
                 <div>

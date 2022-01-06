@@ -1,12 +1,16 @@
-// needs access to user state
-// import getUser... implement user actions
 import { connect } from "react-redux"
 import UserInfo from "./user_info"
+import { getUser } from "../../actions/session_actions"
 
-const mSTP = (state, ownProps) => ({
-  user: ownProps.user
+const mSTP = (state, ownProps) => {
+  console.log(state, ownProps)
+  return {
+  userId: ownProps.userId,
+  users: state.entities.users
+}}
+
+const mDTP = dispatch => ({
+  getUser: userId => dispatch(getUser(userId))
 })
 
-// const mDTP = dispatch => ({})
-
-export default connect(mSTP, null)(UserInfo)
+export default connect(mSTP, mDTP)(UserInfo)
