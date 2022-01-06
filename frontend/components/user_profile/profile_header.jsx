@@ -16,7 +16,9 @@ class ProfileHeader extends React.Component {
         </div>
         <div className="user-info">{user.username}</div>
         <div className="user-stats">
-          user stats
+          <p>posts</p>
+          <p>followers</p>
+          <p>following</p>
         </div>
         <div className="user-text">placeholder text
           <div className="user-title">{user.title}</div>

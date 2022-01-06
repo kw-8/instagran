@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
 $header-width: min(70vw - 130px, 100vw - 10px);
 
 .user-profile {
@@ -14,11 +12,14 @@ $header-width: min(70vw - 130px, 100vw - 10px);
   min-height: calc(100vh - 50px);
   width: 70vw;
   padding: 20px;
+  padding-top: 0px;
 
   .profile-header, .profile-grid {
     position: relative;
     display: flex;
     flex-flow: row wrap;
+    padding-top: 20px;
+    padding-bottom: 20px;
     
     > * {background-color: blanchedalmond;}
   }
@@ -38,7 +39,18 @@ $header-width: min(70vw - 130px, 100vw - 10px);
       min-width: min(120px, 30vw);
       max-width: min(120px, 30vw);
       margin-left: 0;
-      background-color: cornflowerblue;
+      background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    }
+    .user-stats {
+      display: flex;
+      flex-flow: row wrap;
+      width: 300px;
+      min-width: 20px;
+      justify-content: space-between;
+      > * {
+        width: fit-content;
+      }
     }
   }
   .profile-grid {
@@ -48,6 +60,7 @@ $header-width: min(70vw - 130px, 100vw - 10px);
       height: calc(0.33 * 70vw - 1px);
       overflow: hidden;
       margin: max(0.01%, 1px);
+      background-color: lightgray;
       a {
         height: 100%;
         width: 100%;
