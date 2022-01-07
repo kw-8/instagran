@@ -9,11 +9,14 @@ class Api::LikesController < ApplicationController
   end
 
   def index
-    if (like_params[:liker_id])
+    if (params[:liker_id])
       @likes = Like.where(liker_id: params[:liker_id])
-    elsif (like_params[:liked_id])
+    elsif (params[:liked_id])
       @likes = Like.where(post_id: params[:liked_id])
     end
+    p "LIKESS"
+    p @likes
+    p params
     render :index
   end
 
@@ -23,7 +26,7 @@ class Api::LikesController < ApplicationController
     render json: @like
   end
 
-  def like_params
-    params.require(:like).permit(:liker_id, :liked_id)
-  end
+  # def like_params
+  #   params.require(:like).permit(:liker_id, :liked_id)
+  # end
 end
