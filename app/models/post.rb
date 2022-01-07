@@ -12,5 +12,13 @@ class Post < ApplicationRecord
     class_name: 'Comment',
     dependent: :destroy
 
+  has_many :likes,
+    foreign_key: :liked_id,
+    class_name: 'Like'
+
+  has_many :likers,
+    through: :likes,
+    source: :liker
+
   has_many_attached :images
 end
