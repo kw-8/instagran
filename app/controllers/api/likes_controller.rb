@@ -12,7 +12,7 @@ class Api::LikesController < ApplicationController
     if (like_params[:liker_id])
       @likes = Like.where(liker_id: params[:liker_id])
     elsif (like_params[:liked_id])
-      @likes = Like.where(liked_id: params[:liked_id])
+      @likes = Like.where(post_id: params[:liked_id])
     end
     render :index
   end
