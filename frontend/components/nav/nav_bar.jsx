@@ -32,7 +32,6 @@ class NavBar extends React.Component {
 
   render() {// fix cond
     let {currentUser} = this.props
-    console.log(currentUser)
 
     return (
       <div id='nav-bar'>
