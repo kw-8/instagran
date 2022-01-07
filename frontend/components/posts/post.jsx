@@ -24,6 +24,12 @@ class Post extends React.Component {
     document.querySelector('.edit_post').setAttribute('style', 'visibility: visible');
   }
 
+  componentDidUpdate(prevProps) {
+    let { getPost, postId } = this.props;
+    console.log(postId, prevProps.postId)
+    if (postId !== prevProps.postId) getPost(postId);
+  }
+
   togglePostDropdown(e) {
     e.preventDefault()
     let menu = document.querySelector(`.post-dropdown.post-${this.props.postId} > div`);
