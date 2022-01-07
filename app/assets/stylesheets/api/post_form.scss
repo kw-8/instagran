@@ -7,7 +7,7 @@ $basic-padding: 20px;
 $sharp-corner: 2px;
 $round-corner: 3px;
 
-#post-form {
+#post-form, .profile-form {
   position: fixed;
   z-index: 1;
   top: calc(50vh - 250px);

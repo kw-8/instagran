@@ -9,7 +9,6 @@ class ProfileGrid extends React.Component {
   render() {
     let {posts} = this.props;
     if (!posts) return null;
-    console.log(posts)
 
     return (
       <div className="profile-grid">
