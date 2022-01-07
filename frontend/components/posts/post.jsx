@@ -38,19 +38,20 @@ class Post extends React.Component {
     if (!this.props.post) {
       return 'Post Not Found';
     }
-    const { post, deletePost, comments, postId } = this.props
+    const { post, deletePost, comments, postId, type } = this.props
     const { id, description, imageUrls, posterId } = post;
     const user_box = (
-      <div className='user-box'>
-        <div>
+      <div className='post-info'>
+        <div className="user-box">
+          <UserPfpContainer userId={posterId}></UserPfpContainer>
           <UserInfoContainer userId={posterId}></UserInfoContainer>
         </div>
         <div className={`post-dropdown post-${this.props.postId} dropdown`}>
           <a onClick={this.togglePostDropdown}>•••</a>
           <div>
-            {this.props.type === 'list_item' ?
+            {type === 'list_item' ?
               <Link to={`/posts/${id}`} className="x" className='bold-link'>{'Go to Post'}</Link> : ''}
-            {parseInt(this.props.post.posterId) === this.props.currentUserId && this.props.type !== 'list_item' ?
+            {parseInt(this.props.post.posterId) === this.props.currentUserId && type !== 'list_item' ?
               <a className="x" onClick={this.showEditForm}>Edit</a>
               : ""
             }
@@ -60,16 +61,19 @@ class Post extends React.Component {
         </div>
       </div>
     )
-    const div_name = (this.props.type === 'list_item') ? 'post-item' : 'post'
+
+    const post_type = (type === 'list_item') ? 'post-item' : 'post'
+    const description_pfp = post_type === 'post' ?
+      <UserPfpContainer userId={posterId}></UserPfpContainer> : null
 
     return (
-      <div className={div_name} key={`post-${id}`} >
-        { div_name === 'post-item' ?  user_box : '' }
+      <div className={post_type} key={`post-${id}`} >
+        { post_type === 'post-item' ?  user_box : '' }
         <div className="image-container">
           <div className='images-box'>
             {imageUrls.map((url, i) => (
-              <div className="img-div">
-                <img key={i} src={url} className={`${i === 0 ? 'active' : ''}`} id={`${i}`} />
+              <div className="img-div" key={i}>
+                <img src={url} className={`${i === 0 ? 'active' : ''}`} id={`${i}`} />
               </div>
             ))}
             { imageUrls.length === 0 ? "" :
@@ -81,13 +85,15 @@ class Post extends React.Component {
           </div>
         </div>
         <div className='text-container'>
-          { div_name === 'post' ? user_box : '' }
+          { post_type === 'post' ? user_box : '' }
           <div className='description-container'>
-            <UserInfoContainer posterId={post.posterId}></UserInfoContainer>
+            {description_pfp}
+            <UserInfoContainer userId={posterId}></UserInfoContainer>
+            {" "}
             {description}
           </div>
           <div className='comments-container'>
-            <CommentsContainer comments={comments} postId={postId} />
+            <CommentsContainer comments={comments} postId={postId} postType={post_type} />
           </div>
         </div>
       </div>

@@ -10,6 +10,15 @@ $round-corner: 3px;
 $list-width: 50vw;
 $basic-padding: 10px;
 
+.comment-container, .description-container {
+  display: flex;
+  .user-link {padding-right: 4px;}
+  .profile-picture {
+    margin-right: 4px;
+    transform: translate(0, -0.3em);
+  }
+}
+
 .comments-container {
   display: flex;
   flex-direction: column;

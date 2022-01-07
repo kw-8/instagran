@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import UserInfoContainer from "../user_info/user_info_container";
+import UserPfpContainer from "../user_info/user_pfp_container";
 
 class Comments extends React.Component {
   constructor(props) {
@@ -43,33 +43,34 @@ class Comments extends React.Component {
 
   render() {
     const { comments, currentUserId } = this.props
-    // console.log('RENDER COMMENTS IN COMMENTS JSX', comments)
+
     return (
       <>
       <ul>
       {
         comments.map(comment => (
           <li key={comment.id} className={`comment-${comment.id}`}>
-            <div>
-              <div className="comment-text">
-                {/* this.props.postType === 'post' ? UserPfpContainer : null */}
-                <UserInfoContainer userId={comment.commenterId}></UserInfoContainer>
-                {comment.body}
-              </div>
-              {comment.commenterId === currentUserId ?
-                <div>
-                  <a className="toggle-button" onClick={() => this.toggleCommentDropdown(comment.id)}>
-                    •••
-                  </a>
-                  <div className="comment-dropdown dropdown">
-                    <a onClick={() => this.props.deleteComment({id: comment.id} )}>
-                      Delete
-                    </a>
-                  </div>
-                </div>
-                : ""
-              }
+            <div className="comment-container">
+              {this.props.postType === 'post' ?
+                <UserPfpContainer userId={comment.commenterId} /> : null}
+              <UserInfoContainer userId={comment.commenterId}></UserInfoContainer>
+              {" "}
+              {comment.body}
             </div>
+
+            {comment.commenterId === currentUserId ?
+              <div className="dots">
+                <a className="toggle-button" onClick={() => this.toggleCommentDropdown(comment.id)}>
+                  •••
+                </a>
+                <div className="comment-dropdown dropdown">
+                  <a onClick={() => this.props.deleteComment({id: comment.id} )}>
+                    Delete
+                  </a>
+                </div>
+              </div>
+              : ""
+            }
           </li>
         ))
       }

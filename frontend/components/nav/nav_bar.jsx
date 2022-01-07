@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import UserPfpContainer from "../user_info/user_pfp_container";
 
 class NavBar extends React.Component {
   constructor(props){
@@ -30,13 +31,14 @@ class NavBar extends React.Component {
   }
 
   render() {// fix cond
-    let un = (this.props.currentUser) ? this.props.currentUser.username : null;
+    let {currentUser} = this.props
+    console.log(currentUser)
 
     return (
       <div id='nav-bar'>
         <h1 className='logo'><Link to='/'>Instagran</Link></h1>
         <div id='nav-links'>
-          {un != null ?
+          {currentUser != null ?
             <>
               <Link to='/explore'>
                 <img src="assets/home.png"/>
@@ -46,10 +48,11 @@ class NavBar extends React.Component {
               </a>
               <div className="nav-dropdown-container">
                 <div className="nav-user-icon">
-                  <div onClick={this.toggleNavMenu}></div>
+                  <div className="profile-picture" onFocus={this.toggleNavMenu} onBlur={this.toggleNavMenu}>
+
+                  </div>
                   <div className="nav-dropdown-menu dropdown">
-                    <h3>{un}</h3>
-                    <Link to={`/user/${this.props.currentUser.id}`}>Profile</Link>
+                    <Link to={`/user/${currentUser.id}`}>Profile</Link>
                     <a onClick={this.handleLogout}>Logout</a>
                   </div>
                 </div>

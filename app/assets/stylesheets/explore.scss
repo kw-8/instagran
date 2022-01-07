@@ -7,9 +7,15 @@ $round-corner: 3px;
 $list-width: 50vw;
 $basic-padding: 10px;
 
-.user-box {
+.post-info {
   display: flex;
   justify-content: space-between;
+  padding: 10px;
+  > div {
+    display: flex;
+    align-items: center;
+    flex-flow: row;
+  }
 }
 
 #explore {
