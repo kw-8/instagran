@@ -13,9 +13,7 @@ class UserInfo extends React.Component {
     const { userId, users } = this.props;
     if (!users[userId]) return null
     return (
-      <div>
-        <Link to={`/users/${userId}`}>{users[userId].username}</Link>
-      </div>
+      <Link to={`/users/${userId}`} className="user-link bold-link" >{users[userId].username}</Link>
     )
   }
 }

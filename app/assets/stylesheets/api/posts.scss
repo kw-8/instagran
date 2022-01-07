@@ -9,12 +9,6 @@ $basic-text: rgb(38, 38, 38);
 $sharp-corner: 2px;
 $round-corner: 3px;
 
-a.bold-link {
-  text-decoration: none;
-  color: $basic-text;
-  font-weight: 600;
-}
-
 .post-dropdown {
   display: flex;
   flex-direction: column;
@@ -81,7 +75,7 @@ a.bold-link {
     background-color: transparent;
   }
   
-  .user-box, .description-container {
+  .post-info, .description-container {
     border-bottom: 1px solid $mid-gray;
     padding: 10px;
   }
