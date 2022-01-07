@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   validates :poster_id, presence: true
+  # validates pictures exist
   
   belongs_to :poster,
     primary_key: :id,

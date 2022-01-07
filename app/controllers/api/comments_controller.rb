@@ -4,7 +4,7 @@ class Api::CommentsController < ApplicationController
     if @comment.save
       render json: @comment
     else
-      render json: @user.errors.full_messages, status: 422
+      render json: @comment.errors.full_messages, status: 422
     end
   end
 
