@@ -11,12 +11,12 @@ class Explore extends React.Component {
   }
   
   render() {
-    const { posts, deletePost } = this.props;
+    const { posts } = this.props;
     return (
       <div id="explore">
         <ul>
           {
-            posts.map(post => (
+            posts.reverse().map(post => (
                 <PostContainer
                   key={post.id}
                   postId={post.id}

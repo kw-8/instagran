@@ -1,8 +1,7 @@
 import { connect } from "react-redux";
 import Explore from "./explore";
 import {
-  getPosts,
-  deletePost
+  getPosts
 } from "../../actions/post_actions";
 
 const mapStateToProps = (state, ownProps) => {
@@ -14,8 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  getPosts: () => dispatch(getPosts()),
-  deletePost: (id) => dispatch(deletePost(id))
+  getPosts: () => dispatch(getPosts())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Explore);
