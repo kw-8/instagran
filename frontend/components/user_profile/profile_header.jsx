@@ -42,10 +42,10 @@ class ProfileHeader extends React.Component {
         <div className="user-info">{user.username}</div>
         <div className="user-stats">
           <p><span>{user.posts.length}</span> posts</p>
-          <p><span>{user.followers}</span> followers</p>
-          <p><span>{user.following}</span> following</p>
+          <p><span>{user.followers.length}</span> followers</p>
+          <p><span>{user.following.length}</span> following</p>
         </div>
-        <div className="user-text">description placeholder
+        <div className="user-text">
           <div className="user-title">{user.title}</div>
           <div className="user-description">{user.description}</div>
         </div>
