@@ -4,13 +4,13 @@ export const RECEIVE_LIKES = 'RECEIVE_LIKES';
 export const REMOVE_LIKE = 'REMOVE_LIKE';
 export const RECEIVE_LIKE_ERRORS = 'RECEIVE_LIKE_ERRORS';
 
-export const receiveLikes = LIKEs => ({
+export const receiveLikes = likes => ({
   type: RECEIVE_LIKES,
-  LIKEs
+  likes
 });
-export const removeLike = LIKE => ({
+export const removeLike = like => ({
   type: REMOVE_LIKE,
-  LIKE
+  like
 });
 
 
