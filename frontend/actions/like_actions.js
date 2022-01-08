@@ -25,12 +25,11 @@ export const createLike = (newLike) => dispatch => {
 }
 
 export const getLikes = like_params => dispatch => {
-  console.log(like_params)
   return LikeUtil.getLikes(like_params)
     .then(likes => dispatch(receiveLikes(likes)))
 }
 
-export const deleteLike = id => dispatch => {
-  return LikeUtil.deleteLike(id)
+export const deleteLike = like => dispatch => {
+  return LikeUtil.deleteLike(like)
     .then(like => dispatch(removeLike(like)))
 }
