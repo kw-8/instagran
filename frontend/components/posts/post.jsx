@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CommentsContainer from "../comments/comments_container";
+import PostLikesContainer from "../likes/post_likes_container";
 import UserInfoContainer from "../user_info/user_info_container";
 import UserPfpContainer from "../user_info/user_pfp_container";
 
@@ -91,6 +92,7 @@ class Post extends React.Component {
         </div>
         <div className='text-container'>
           { post_type === 'post' ? user_box : '' }
+          <PostLikesContainer postId={postId} />
           <div className='description-container'>
             {description_pfp}
             <UserInfoContainer userId={posterId}></UserInfoContainer>

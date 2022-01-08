@@ -26,7 +26,7 @@ class Api::LikesController < ApplicationController
     render json: @like
   end
 
-  # def like_params
-  #   params.require(:like).permit(:liker_id, :liked_id)
-  # end
+  def like_params
+    params.require(:like).permit(:liker_id, :post_id)
+  end
 end

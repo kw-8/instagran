@@ -1,12 +1,17 @@
 import * as LikeUtil from '../util/like_util'
 
 export const RECEIVE_LIKES = 'RECEIVE_LIKES';
+export const RECEIVE_LIKE = 'RECEIVE_LIKE';
 export const REMOVE_LIKE = 'REMOVE_LIKE';
 export const RECEIVE_LIKE_ERRORS = 'RECEIVE_LIKE_ERRORS';
 
 export const receiveLikes = likes => ({
   type: RECEIVE_LIKES,
   likes
+});
+export const receiveLike = like => ({
+  type: RECEIVE_LIKE,
+  like
 });
 export const removeLike = like => ({
   type: REMOVE_LIKE,
