@@ -30,16 +30,16 @@ class PostLikes extends React.Component {
   }
 
   render() {
-    let { likes, currentUserId } = this.props;
+    let { likes, currentUserId, post } = this.props;
     return (
       <div className="post-likes">
         {
-          likes.find(like => like.likerId === currentUserId) ?
+          likes.find(like => like.likerId === currentUserId && like.postId === post.id) ?
             <a onClick={this.unlike}>unlike</a>
           : <a onClick={this.like}>like</a>
           // 
         }
-        <p><span>{likes.length}</span>{` likes`}</p>
+        <p><span>{likes.filter(like => like.postId === post.id).length}</span>{` likes`}</p>
       </div>
     )
   }
