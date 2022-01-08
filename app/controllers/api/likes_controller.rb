@@ -11,8 +11,8 @@ class Api::LikesController < ApplicationController
   def index
     if (params[:liker_id])
       @likes = Like.where(liker_id: params[:liker_id])
-    elsif (params[:liked_id])
-      @likes = Like.where(post_id: params[:liked_id])
+    elsif (params[:post_id])
+      @likes = Like.where(post_id: params[:post_id])
     end
     p "LIKESS"
     p @likes
