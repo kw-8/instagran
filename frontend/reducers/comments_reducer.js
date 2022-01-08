@@ -4,9 +4,7 @@ import {
   REMOVE_COMMENT
 } from "../actions/comment_actions";
 
-const nullComment = { comments: {} }
-
-export default (state = nullComment.comments, action) => {
+export default (state = {}, action) => {
   // debugger
   Object.freeze(state);
 

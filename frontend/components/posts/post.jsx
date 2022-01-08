@@ -25,7 +25,7 @@ class Post extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    let { getPost, postId } = this.props;
+    let { postId, getPost } = this.props;
     if (postId !== prevProps.postId) getPost(postId);
   }
 

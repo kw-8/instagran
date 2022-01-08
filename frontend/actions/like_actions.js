@@ -22,7 +22,6 @@ export const createLike = (newLike) => dispatch => {
 export const getLikes = like_params => dispatch => {
   console.log(like_params)
   return LikeUtil.getLikes(like_params)
-    // .then(likes => console.log(likes))
     .then(likes => dispatch(receiveLikes(likes)))
 }
 
