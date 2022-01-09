@@ -33,13 +33,12 @@ class FollowButton extends React.Component {
 
   render() {
     let { follows, currentUserId, userId } = this.props;
-    console.log(currentUserId, userId)
     return (
       <div className="user-follow-box">
         {
           follows.find(follow => follow.followerId === currentUserId && follow.followedId === parseInt(userId)) ?
-            <a onClick={this.unfollow}>unfollow</a>
-            : <a onClick={this.follow}>follow</a>
+            <button onClick={this.unfollow}>unfollow</button>
+            : <button onClick={this.follow}>follow</button>
         }
       </div>
     )

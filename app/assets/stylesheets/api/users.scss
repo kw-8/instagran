@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $header-width: min(70vw - 130px, 100vw - 10px);
+$bright-blue: rgb(0, 149, 246);
 
 .user-profile {
   display: flex;
@@ -42,6 +43,25 @@ $header-width: min(70vw - 130px, 100vw - 10px);
       background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
     }
+    .user-info {
+      display: flex;
+      flex-flow: row wrap;
+      align-content: flex-start;
+      align-items: center;
+      p {
+        font-size: 20px;
+        margin-right: 10px;
+      }
+      button {
+        padding: 4px;
+        border: none;
+        border-radius: 2px;
+        background-color: $bright-blue;
+        color: white;
+        font-size: 11px;
+        font-weight: 500;
+      }
+    }
     .user-stats {
       display: flex;
       flex-flow: row wrap;
@@ -51,6 +71,7 @@ $header-width: min(70vw - 130px, 100vw - 10px);
       > * {
         width: fit-content;
       }
+      span {font-weight: 700;}
     }
   }
   .profile-grid {
@@ -86,6 +107,8 @@ $header-width: min(70vw - 130px, 100vw - 10px);
         min-width: min(500px, calc(70vw - 20px));
         max-width: min(500px, calc(70vw - 20px));
         min-height: min(120px, 30vw);
+        flex-direction: column;
+        align-items: baseline;
       }
       .user-stats, .user-text {
         margin-left: 0;

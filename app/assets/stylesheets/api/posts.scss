@@ -39,6 +39,15 @@ $round-corner: 3px;
   }
 }
 
+.post-likes {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  span {
+    font-weight: 700;
+  }
+}
+
 .post {
   border: 1px solid $border-gray;
   border-radius: $sharp-corner;
