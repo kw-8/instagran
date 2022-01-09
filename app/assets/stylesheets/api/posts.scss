@@ -43,8 +43,19 @@ $round-corner: 3px;
   margin-left: 10px;
   margin-right: 10px;
   display: flex;
+  align-items: center;
   span {
     font-weight: 700;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    margin-left: 3px;
+    margin-right: 6px;
+    img {
+      height: 1.6em;
+      width: auto;
+    }
   }
 }
 
