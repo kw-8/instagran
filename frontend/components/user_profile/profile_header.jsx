@@ -33,16 +33,19 @@ class ProfileHeader extends React.Component {
   }
 
   render() {
-    let {user, userId} = this.props;
+    let {user, userId, currentUserId} = this.props;
     if (!user.posts) return null
     return (
       <div className="profile-header">
         <div className="pfp">
-          pfp
+          {/* pfp */}
         </div>
         <div className="user-info">
-          {user.username}
-          <FollowButtonContainer userId={userId}></FollowButtonContainer>
+          <p>{user.username}</p>
+          {userId == currentUserId ?
+          <></>
+          :<FollowButtonContainer userId={userId}></FollowButtonContainer>
+          }
         </div>
         <div className="user-stats">
           <p><span>{user.posts.length}</span> posts</p>
