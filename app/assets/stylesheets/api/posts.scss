@@ -99,12 +99,26 @@ $round-corner: 3px;
     border-bottom: 1px solid $mid-gray;
     padding: 10px;
   }
+
+  .post-likes {
+    position: absolute;
+    bottom: 3.2em;
+    margin: 0;
+    padding-left: 4px;
+    width: 40%;
+    box-sizing: border-box;
+    border-bottom: 1px solid $border-gray;
+    background-color: white;
+  }
   .comments-container {
     height: fit-content;
     flex-grow: 1;
     ul { padding-top: 8px; }
     > .new-comment {
       border-top: 1px solid $mid-gray;
+    }
+    form {
+      padding-top: 2em;
     }
   }
 }

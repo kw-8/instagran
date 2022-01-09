@@ -53,8 +53,13 @@ $basic-padding: 10px;
         max-height: calc(0.6 * (100vw - 60px));
       }
 
-      .description-container {
+      .post-likes {
         margin-top: 6px;
+        margin-left: 6px;
+      }
+
+      .description-container {
+        // margin-top: 6px;
         margin-left: 10px;
       }
     }
