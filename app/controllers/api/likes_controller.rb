@@ -14,9 +14,6 @@ class Api::LikesController < ApplicationController
     elsif (params[:post_id])
       @likes = Like.where(post_id: params[:post_id])
     end
-    p "LIKESS"
-    p @likes
-    p params
     render :index
   end
 

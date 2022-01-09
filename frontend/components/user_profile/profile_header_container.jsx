@@ -3,7 +3,6 @@ import ProfileHeader from "./profile_header"
 import { updateUser } from "../../actions/session_actions"
 
 const mSTP = (state, ownProps) => ({
-  currentUser: state.session.currentUser,
   userId: ownProps.userId,
   user: ownProps.user
 })

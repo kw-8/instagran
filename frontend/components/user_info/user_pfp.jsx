@@ -7,7 +7,6 @@ class UserProfilePic extends React.Component {
   componentDidMount() {
     const { userId, users, getUser } = this.props;
     if (!users[userId]) {
-      console.log('getting user for pfp')
       getUser(userId)
     }
   }

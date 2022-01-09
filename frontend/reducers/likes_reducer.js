@@ -4,7 +4,6 @@ import {
   REMOVE_LIKE
 } from "../actions/like_actions";
 
-// const nullLike = { likes: {} }
 export default (state = {}, action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state)
