@@ -1,4 +1,5 @@
 import React from "react";
+import FollowButtonContainer from "../user_info/follow_button_container";
 
 class ProfileHeader extends React.Component {
   constructor(props) {
@@ -32,14 +33,17 @@ class ProfileHeader extends React.Component {
   }
 
   render() {
-    let {currentUser, user, userId} = this.props;
+    let {user, userId} = this.props;
     if (!user.posts) return null
     return (
       <div className="profile-header">
         <div className="pfp">
           pfp
         </div>
-        <div className="user-info">{user.username}</div>
+        <div className="user-info">
+          {user.username}
+          <FollowButtonContainer userId={userId}></FollowButtonContainer>
+        </div>
         <div className="user-stats">
           <p><span>{user.posts.length}</span> posts</p>
           <p><span>{user.followers.length}</span> followers</p>

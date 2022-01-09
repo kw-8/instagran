@@ -19,7 +19,7 @@ const mDTP = (dispatch) => {
   return {
     createLike: like => dispatch(createLike(like)),
     getLikes: like_params => dispatch(getLikes(like_params)),
-    deleteLike: likeId => dispatch(deleteLike(likeId))
+    deleteLike: like => dispatch(deleteLike(like))
   }
 }
 
