@@ -47,7 +47,7 @@ class NavBar extends React.Component {
               </a>
               <div className="nav-dropdown-container">
                 <div className="nav-user-icon">
-                  <div className="profile-picture" onFocus={this.toggleNavMenu} onBlur={this.toggleNavMenu}>
+                  <div className="profile-picture" onClick={this.toggleNavMenu}>
 
                   </div>
                   <div className="nav-dropdown-menu dropdown">
