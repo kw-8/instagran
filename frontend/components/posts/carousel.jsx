@@ -9,7 +9,6 @@ class Carousel extends React.Component {
   render() {
     let {imageUrls} = this.props;
     let {i} = this.state;
-    // let styles = {'transform': `translate( -${(this.state.i - 1)} * min(100vw - 40px, 70vw)) )`}
     let styles = {'transform': `translate( calc(-${(this.state.i - 1)} * 100%))`}
     return (
       <div className="image-container">
@@ -26,6 +25,12 @@ class Carousel extends React.Component {
               <a className="prev" onClick={() => this.setState({ i: i - 1 })}>❮</a>}
             { i === imageUrls.length ? "" :
               <a className="next" onClick={() => this.setState({ i: i + 1 })}>❯</a>}
+            <div className="dots">
+              {imageUrls.map((url, index) => (
+                <a className={`dot ${i == index+1 ? 'active' : ''}`}
+                  onClick={() => this.setState({i: index+1})}>•</a>
+              ))}
+            </div>
           </>
         }
       </div>
