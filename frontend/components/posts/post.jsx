@@ -4,6 +4,7 @@ import CommentsContainer from "../comments/comments_container";
 import PostLikesContainer from "../likes/post_likes_container";
 import UserInfoContainer from "../user_info/user_info_container";
 import UserPfpContainer from "../user_info/user_pfp_container";
+import CarouselContainer from "./carousel_container";
 
 class Post extends React.Component {
   constructor(props) {
@@ -41,7 +42,7 @@ class Post extends React.Component {
   }
 
   render() {
-    if (!this.props.post) {
+    if (!this.props.post || !this.props.post.imageUrls) {
       return 'Post Not Found';
     }
     const { post, deletePost, comments, postId, type } = this.props
@@ -70,26 +71,12 @@ class Post extends React.Component {
 
     const post_type = (type === 'list_item') ? 'post-item' : 'post'
     const description_pfp = post_type === 'post' ?
-      <UserPfpContainer userId={posterId}></UserPfpContainer> : null
+      <UserPfpContainer userId={posterId} postId={postId}></UserPfpContainer> : null
 
     return (
       <div className={post_type} key={`post-${id}`} >
         { post_type === 'post-item' ?  user_box : '' }
-        <div className="image-container">
-          <div className='images-box'>
-            {imageUrls.map((url, i) => (
-              <div className="img-div" key={i}>
-                <img src={url} className={`${i === 0 ? 'active' : ''}`} id={`${i}`} />
-              </div>
-            ))}
-            { imageUrls.length === 0 ? "" :
-              <>
-                <a className="prev hidden">❮</a>
-                <a className="next">❯</a>
-              </>
-            }
-          </div>
-        </div>
+        <CarouselContainer imageUrls={imageUrls}></CarouselContainer>
         <div className='text-container'>
           { post_type === 'post' ? user_box : '' }
           <PostLikesContainer postId={postId} />

@@ -16,16 +16,16 @@
 .prev:hover, .next:hover {
   background-color: rgba(255, 255, 255, 0.95);
 }
-.next {
-  right: 0;
-}
+.prev { left: 0; }
+.next { right: 0; }
 a.hidden {
   visibility: hidden;
 }
 
 .image-container {
+  position: relative;
   overflow: hidden;
-  align-items: center;
+  justify-content: center;
   .images-box {
     position: relative;
     display: flex;
