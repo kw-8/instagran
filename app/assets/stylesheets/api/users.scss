@@ -34,6 +34,10 @@ $bright-blue: rgb(0, 149, 246);
       max-width: $header-width;
     }
     .pfp {
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      
       position: absolute;
       border-radius: 50%;
       height: min(120px, 30vw);

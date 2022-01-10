@@ -12,7 +12,14 @@ class ProfileHeader extends React.Component {
 
   componentDidMount() { }
 
-  toggleEdit() {}
+  toggleEdit() {
+    let profileForm = document.querySelector(`.profile-form`);
+    if (profileForm.style['visibility'] && profileForm.style['visibility'] === "hidden") {
+      profileForm.setAttribute('style', 'visibility: visible');
+    } else {
+      profileForm.setAttribute('style', 'visibility: hidden');
+    }
+  }
 
   update(field) {
     return (e) => {
@@ -25,11 +32,14 @@ class ProfileHeader extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     const formData = new FormData();
-    formData.append('user[id]', this.state.id);
-    formData.append('user[username]', this.state.username);
+    // formData.append('id', this.props.currentUserId);
+    formData.append('user[id]', this.props.currentUserId);
+    formData.append('user[username]', this.props.user.username);
     formData.append('user[description]', this.state.description);
     formData.append('user[full_name]', this.state.title);
-    this.props.updateUser(formData)
+    formData.append('user[profile_picture]', this.state.profile_picture);
+    this.props.updateUser(formData);
+    this.toggleEdit();
   }
 
   render() {
@@ -38,12 +48,14 @@ class ProfileHeader extends React.Component {
     return (
       <div className="profile-header">
         <div className="pfp">
-          {/* pfp */}
+          {user.profilePictureUrl ?
+            <img src={user.profilePictureUrl} />
+            : ""}
         </div>
         <div className="user-info">
           <p>{user.username}</p>
           {userId == currentUserId ?
-          <></>
+          <button onClick={this.toggleEdit}>Edit</button>
           :<FollowButtonContainer userId={userId}></FollowButtonContainer>
           }
         </div>
@@ -57,6 +69,10 @@ class ProfileHeader extends React.Component {
           <div className="user-description">{user.description}</div>
         </div>
         <form className="profile-form">
+          <input
+            type="file"
+            onChange={e => this.setState({ profile_picture: e.target.files[0] })}
+          />
           <input type="text"
             id="user-title"
             placeholder="Add a title"
@@ -68,6 +84,7 @@ class ProfileHeader extends React.Component {
             value={user.description}
             onChange={this.update('description')} />
           <button onClick={this.handleSubmit}>Update</button>
+          <button onClick={this.toggleEdit}>Cancel</button>
         </form>
       </div>
     )

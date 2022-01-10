@@ -11,11 +11,14 @@ class UserProfilePic extends React.Component {
     }
   }
   render() {
-    if (!this.props.userId) return null;
-    const { userId } = this.props;
+    const { users, userId } = this.props;
+    const user = users[userId]
+    if (!this.props.userId || !user) return null;
     return (
       <div className="profile-picture">
-        {/* <img src='' /> */}
+        {user.profilePictureUrl ?
+          <img src={user.profilePictureUrl} />
+          : ""}
       </div>
     )
   }
