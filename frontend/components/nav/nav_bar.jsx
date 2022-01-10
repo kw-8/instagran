@@ -48,7 +48,7 @@ class NavBar extends React.Component {
               <div className="nav-dropdown-container">
                 <div className="nav-user-icon">
                   <div className="profile-picture" onClick={this.toggleNavMenu}>
-
+                    <UserPfpContainer userId={currentUser.id} />
                   </div>
                   <div className="nav-dropdown-menu dropdown">
                     <Link to={`/user/${currentUser.id}`}>Profile</Link>
