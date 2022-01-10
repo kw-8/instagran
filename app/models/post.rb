@@ -2,6 +2,8 @@ class Post < ApplicationRecord
   validates :poster_id, presence: true
   validate :images_validation
   
+  has_many_attached :images
+  
   belongs_to :poster,
   primary_key: :id,
   foreign_key: :poster_id,
@@ -20,15 +22,13 @@ class Post < ApplicationRecord
   has_many :likers,
   through: :likes,
   source: :liker
-  
-  has_many_attached :images
 
   def images_validation
     if images.attached?
-      if ( images.any?{|img| img.byte_size > 5000000} && images.map(&:byte_size).sum > 10000000 )
-        images.purge
-        errors[:base] << 'Too big'
-      elsif images.any?{|img| !img.content_type.starts_with?('image/')}
+      # if ( images.any?{|img| img.byte_size > 5000000} && images.map(&:byte_size).sum > 10000000 )
+      #   images.purge
+      #   errors[:base] << 'Too big'
+      if images.any?{|img| !img.content_type.starts_with?('image/')}
         images.purge
         errors[:base] << 'Wrong format'
       end

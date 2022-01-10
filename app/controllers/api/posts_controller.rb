@@ -19,7 +19,7 @@ class Api::PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @comments = Comment.all
+    # @comments = Comment.all
     render :index
   end
 

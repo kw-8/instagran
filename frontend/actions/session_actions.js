@@ -46,7 +46,7 @@ export const getUser = (userId) => dispatch => (
     return dispatch(receiveUser(user))
   })
   )
-export const updateUser = (user) => dispatch => (
-  APIUtil.updateUser(user)
+export const updateUser = (formUser) => dispatch => (
+  APIUtil.updateUser(formUser)
   .then(user => dispatch(receiveUser(user)))
   )
