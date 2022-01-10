@@ -5,9 +5,7 @@ import {
 } from "../actions/comment_actions";
 
 export default (state = {}, action) => {
-  // debugger
   Object.freeze(state);
-
   let nextState = Object.assign({}, state);
   switch(action.type) {
     case RECEIVE_COMMENTS:
