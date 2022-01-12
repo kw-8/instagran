@@ -12,6 +12,7 @@ class Explore extends React.Component {
   
   render() {
     const { posts } = this.props;
+    if (posts[0] === null) return null;
     return (
       <div id="explore">
         <ul>
