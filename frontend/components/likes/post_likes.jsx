@@ -35,8 +35,8 @@ class PostLikes extends React.Component {
       <div className="post-likes">
         {
           likes.find(like => like.likerId === currentUserId && like.postId === post.id) ?
-            <a onClick={this.unlike}><img src="assets/like1.png"/></a>
-            : <a onClick={this.like}><img src="assets/like.png" /></a>
+            <a onClick={this.unlike}><img src="https://instagran-seed.s3.us-west-1.amazonaws.com/like1.png"/></a>
+            : <a onClick={this.like}><img src="https://instagran-seed.s3.us-west-1.amazonaws.com/like.png" /></a>
           // 
         }
         <p><span>{likes.filter(like => like.postId === post.id).length}</span>{` likes`}</p>

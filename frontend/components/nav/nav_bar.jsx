@@ -40,10 +40,10 @@ class NavBar extends React.Component {
           {currentUser != null ?
             <>
               <Link to='/explore'>
-                <img src="assets/home.png"/>
+                <img src="https://instagran-seed.s3.us-west-1.amazonaws.com/home.png"/>
               </Link>
               <a onClick={this.showCreatePost}>
-                <img src="assets/post.png"/>
+                <img src="https://instagran-seed.s3.us-west-1.amazonaws.com/post.png"/>
               </a>
               <div className="nav-dropdown-container">
                 <div className="nav-user-icon">
