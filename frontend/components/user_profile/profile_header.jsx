@@ -46,6 +46,7 @@ class ProfileHeader extends React.Component {
     let {user, userId, currentUserId} = this.props;
     if (!user.posts) return null
     return (
+      <>
       <div className="profile-header">
         <div className="pfp">
           {user.profilePictureUrl ?
@@ -68,25 +69,26 @@ class ProfileHeader extends React.Component {
           <div className="user-title">{user.title}</div>
           <div className="user-description">{user.description}</div>
         </div>
-        <form className="profile-form">
-          <input
-            type="file"
-            onChange={e => this.setState({ profile_picture: e.target.files[0] })}
-          />
-          <input type="text"
-            id="user-title"
-            placeholder="Add a title"
-            value={user.title}
-            onChange={this.update('title')} />
-          <textarea
-            id="user-description"
-            placeholder="Add a description"
-            value={user.description}
-            onChange={this.update('description')} />
-          <button onClick={this.handleSubmit}>Update</button>
-          <button onClick={this.toggleEdit}>Cancel</button>
-        </form>
       </div>
+      <form className="profile-form">
+        <input
+          type="file"
+          onChange={e => this.setState({ profile_picture: e.target.files[0] })}
+        />
+        <input type="text"
+          id="user-title"
+          placeholder="Add a title"
+          value={user.title}
+          onChange={this.update('title')} />
+        <textarea
+          id="user-description"
+          placeholder="Add a description"
+          value={user.description}
+          onChange={this.update('description')} />
+        <button onClick={this.handleSubmit}>Update</button>
+        <button onClick={this.toggleEdit}>Cancel</button>
+      </form>
+      </>
     )
   }
 }

@@ -23,8 +23,6 @@ body, textarea {
   min-height: 100vh;
   width: 100vw;
   background-color: $lightest-gray;
-
-  * {font-size: 12px;}
   
   > div {
     position: relative;
@@ -44,6 +42,8 @@ body, textarea {
     align-items: center;
     min-width: 350px;
     max-width: fit-content;
+
+    * {font-size: 12px;}
     
     > div {
       text-align: center;
@@ -149,7 +149,6 @@ body, textarea {
   }
 
   .logo, .logo > a {
-    // font-size: 20px;
     color: $basic-text;
     text-decoration: none;
   }
