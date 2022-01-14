@@ -43,7 +43,7 @@ class ProfileHeader extends React.Component {
   }
 
   render() {
-    let {user, userId, currentUserId} = this.props;
+    let {user, userId, currentUserId, follows} = this.props;
     if (!user.posts) return null
     return (
       <>
@@ -62,7 +62,7 @@ class ProfileHeader extends React.Component {
         </div>
         <div className="user-stats">
           <p><span>{user.posts.length}</span> posts</p>
-          <p><span>{user.followers.length}</span> followers</p>
+          <p><span>{follows}</span> followers</p>
           <p><span>{user.following.length}</span> following</p>
         </div>
         <div className="user-text">

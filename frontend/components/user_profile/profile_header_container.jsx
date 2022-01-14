@@ -5,7 +5,8 @@ import { updateUser } from "../../actions/session_actions"
 const mSTP = (state, ownProps) => ({
   currentUserId: state.session.currentUser.id,
   userId: ownProps.userId,
-  user: ownProps.user
+  user: ownProps.user,
+  follows: Object.values(state.entities.follows).filter(follow => follow.followedId == ownProps.userId).length
 })
 
 const mDTP = dispatch => ({
