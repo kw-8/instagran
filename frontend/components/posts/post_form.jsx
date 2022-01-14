@@ -61,7 +61,6 @@ class PostForm extends React.Component {
         <div id='post-form' className={postType}>
           <div>
             <h3>{postType === 'new_post' ? 'Create new post' : 'Edit post'}</h3>
-              <button className="close-div" onClick={() => this.hideForm(postType)}>x</button>
             <form>
               <input
                 type="file"
@@ -71,6 +70,7 @@ class PostForm extends React.Component {
               <textarea id="description" placeholder="Add a caption" value={this.state.description} onChange={this.update('description')} />
               <br />
               <button onClick={this.handleSubmit}>Post</button>
+              <button className="close-div" onClick={() => this.hideForm(postType)}>Cancel</button>
             </form>
           </div>
         </div>
