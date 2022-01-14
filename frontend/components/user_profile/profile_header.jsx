@@ -83,7 +83,7 @@ class ProfileHeader extends React.Component {
         <textarea
           id="user-description"
           placeholder="Add a description"
-          value={user.description}
+          value={user.description || ''}
           onChange={this.update('description')} />
         <button onClick={this.handleSubmit}>Update</button>
         <button onClick={this.toggleEdit}>Cancel</button>
