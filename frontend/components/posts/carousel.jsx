@@ -27,7 +27,7 @@ class Carousel extends React.Component {
               <a className="next" onClick={() => this.setState({ i: i + 1 })}>❯</a>}
             <div className="dots">
               {imageUrls.map((url, index) => (
-                <a className={`dot ${i == index+1 ? 'active' : ''}`}
+                <a key={index} className={`dot ${i == index+1 ? 'active' : ''}`}
                   onClick={() => this.setState({i: index+1})}>•</a>
               ))}
             </div>
