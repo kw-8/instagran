@@ -1,15 +1,16 @@
-// imports
+import { RECEIVE_SESSION_ERRORS, REMOVE_SESSION_ERRORS } from "../actions/session_actions";
 
 const sessionErrorsReducer = (state={}, action) => {
-  // switch (action.type) {
-  //   case RECEIVE_SESSION_ERRORS:
-  //     return Object.assign(state, action.errors);
-  //   case RECEIVE_CURRENT_USER:
-  //     return {};
-  //   default:
-  //     break;
-  // }
-  return {};
+  Object.freeze(state)
+  switch (action.type) {
+    case RECEIVE_SESSION_ERRORS:
+      debugger
+      return action.errors.responseJSON;
+    case REMOVE_SESSION_ERRORS:
+      return {};
+    default:
+      return {};
+  }
 }
 
 export default sessionErrorsReducer;

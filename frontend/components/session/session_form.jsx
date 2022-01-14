@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { removeSessionErrors } from "../../actions/session_actions";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -8,8 +9,6 @@ class SessionForm extends React.Component {
       username: "",
       password: ""
     };
-
-    this.state = props.user;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
   }
@@ -48,6 +47,7 @@ class SessionForm extends React.Component {
       otherFormText = 'Don\'t have an account? ';
       otherFormLink = '/signup'
     }
+    // debugger
     return (
       <div id='session-form' className={formType}>
         <div>
@@ -57,13 +57,16 @@ class SessionForm extends React.Component {
             <br />
             <button onClick={this.handleSubmit}>{thisFormName}</button>
           </form>
+          <div className="session-errors">
+            <p>{this.props.errors ? this.props.errors.map(error => <li>{error}</li>) : null}</p>
+          </div>
           <form>
             <button className='demo-login' onClick={() => this.props.submitForm({username: 'super_grandma', password: 'supersuper'})}>Login with super_grandma</button>
           </form>
         </div>
         <div>
           {otherFormText}
-          <Link to={otherFormLink}>{otherFormName}</Link>
+          <Link to={otherFormLink} onClick={() => dispatch(removeSessionErrors())}>{otherFormName}</Link>
         </div>
       </div>
     )

@@ -10,7 +10,8 @@ const mapStateToProps = state => {
       password: ''
     },
     formType: 'login',
-    inputs: LoginInputs
+    inputs: LoginInputs,
+    errors: Object.values(state.errors.session)
   })
 }
 
