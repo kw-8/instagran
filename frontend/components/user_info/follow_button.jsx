@@ -10,8 +10,8 @@ class FollowButton extends React.Component {
   follow() {
     const { createFollow, currentUserId, userId } = this.props;
     createFollow({
-      'followed_id': currentUserId,
-      'follower_id': userId
+      'followed_id': userId,
+      'follower_id': currentUserId
     });
   }
 
