@@ -13,14 +13,14 @@ class Comments extends React.Component {
   }
 
   toggleCommentDropdown(commentId) {
-    // e.preventDefault()
+    e.preventDefault();
     let menu = document.querySelector(`.comment-${commentId} .comment-dropdown`);
     if (menu.style['visibility'] && menu.style['visibility'] === "hidden") {
-      menu.setAttribute('style', 'visibility: visible');
       setUpClickAway(`.comment-${commentId} .toggle-button`, `.comment-${commentId} .dropdown`);
+      menu.setAttribute('style', 'visibility: visible');
     } else {
-      menu.setAttribute('style', 'visibility: hidden');
       removeClickAway(`.comment-${commentId} .toggle-button`, `.comment-${commentId} .dropdown`);
+      // menu.setAttribute('style', 'visibility: hidden');
     }
   }
 

@@ -24,10 +24,10 @@ class NavBar extends React.Component {
     let menu = document.querySelector('.nav-dropdown-menu');
     if (menu.style['visibility'] && menu.style['visibility'] === "hidden") {
       menu.setAttribute('style', 'visibility: visible');
-      setUpClickAway('.profile-picture.dropdown-button img', '.nav-dropdown-menu')
+      setUpClickAway('.profile-picture.dropdown-button img, .profile-picture.dropdown-button div', '.nav-dropdown-menu')
     } else {
       menu.setAttribute('style', 'visibility: hidden');
-      removeClickAway('.profile-picture.dropdown-button img', '.nav-dropdown-menu')
+      removeClickAway('.profile-picture.dropdown-button img, .profile-picture.dropdown-button div', '.nav-dropdown-menu')
     }
   }
 
