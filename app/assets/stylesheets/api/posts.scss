@@ -19,7 +19,7 @@ $round-corner: 3px;
     
     display: flex;
     flex-direction: column;
-    transform: translate(-80px, 20px);
+    transform: translate(-80px, calc(50% + 20px));
     width: 100px;
 
     box-sizing: border-box;
