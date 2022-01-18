@@ -1,6 +1,7 @@
 import React from "react";
 import UserInfoContainer from "../user_info/user_info_container";
 import UserPfpContainer from "../user_info/user_pfp_container";
+import { setUpClickAway, removeClickAway } from "../dropdown";
 
 class Comments extends React.Component {
   constructor(props) {
@@ -16,14 +17,16 @@ class Comments extends React.Component {
     let menu = document.querySelector(`.comment-${commentId} .comment-dropdown`);
     if (menu.style['visibility'] && menu.style['visibility'] === "hidden") {
       menu.setAttribute('style', 'visibility: visible');
+      setUpClickAway(`.comment-${commentId} .toggle-button`, `.comment-${commentId} .dropdown`);
     } else {
       menu.setAttribute('style', 'visibility: hidden');
+      removeClickAway(`.comment-${commentId} .toggle-button`, `.comment-${commentId} .dropdown`);
     }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    // debugger
+    
     const { postId, currentUserId } = this.props;
     this.props.createComment({
       commenter_id: currentUserId,

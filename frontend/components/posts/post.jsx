@@ -5,6 +5,7 @@ import PostLikesContainer from "../likes/post_likes_container";
 import UserInfoContainer from "../user_info/user_info_container";
 import UserPfpContainer from "../user_info/user_pfp_container";
 import CarouselContainer from "./carousel_container";
+import { setUpClickAway, removeClickAway } from "../dropdown";
 
 class Post extends React.Component {
   constructor(props) {
@@ -36,8 +37,10 @@ class Post extends React.Component {
     let menu = document.querySelector(`.post-dropdown.post-${this.props.postId} > div`);
     if (menu.style['visibility'] && menu.style['visibility'] === "hidden") {
       menu.setAttribute('style', 'visibility: visible');
+      setUpClickAway(`.post-${this.props.postId} .dropdown-button`, `.post-${this.props.postId} .dropdown`)
     } else {
       menu.setAttribute('style', 'visibility: hidden');
+      removeClickAway(`.post-${this.props.postId} .dropdown-button`, `.post-${this.props.postId} .dropdown`)
     }
   }
 
@@ -53,9 +56,9 @@ class Post extends React.Component {
           <UserPfpContainer userId={posterId}></UserPfpContainer>
           <UserInfoContainer userId={posterId}></UserInfoContainer>
         </div>
-        <div className={`post-dropdown post-${this.props.postId} dropdown`}>
-          <a onClick={this.togglePostDropdown}>•••</a>
-          <div>
+        <div className={`post-dropdown post-${this.props.postId}`}>
+          <a onClick={this.togglePostDropdown} className="dropdown-button">•••</a>
+          <div className="dropdown">
             {type === 'list_item' ?
               <Link to={`/posts/${id}`} className="x" className='bold-link'>{'Go to Post'}</Link> : ''}
             {parseInt(this.props.post.posterId) === this.props.currentUserId && type !== 'list_item' ?
