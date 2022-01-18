@@ -43,6 +43,18 @@ $basic-padding: 10px;
       h3 {
         font-weight: 500;
       }
+
+      a {
+        text-decoration: none;
+        color: $basic-text;
+        padding-left: 2em;
+      }
+      
+      ion-icon, i {
+        position: absolute;
+        left: 1em;
+        padding-top: 0.2em;
+      }
     }
   }
 }

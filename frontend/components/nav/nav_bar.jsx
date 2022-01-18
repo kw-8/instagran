@@ -51,8 +51,25 @@ class NavBar extends React.Component {
                     <UserPfpContainer userId={currentUser.id} />
                   </div>
                   <div className="nav-dropdown-menu dropdown">
+                    <i class="fa fa-user-circle"></i>
                     <Link to={`/user/${currentUser.id}`}>Profile</Link>
-                    <a onClick={this.handleLogout}>Logout</a>
+                    <a href="https://www.linkedin.com/in/katherine-wu-ca/">
+                      <ion-icon name="logo-linkedin"></ion-icon>
+                      LinkedIn
+                    </a>
+                    <a href="https://github.com/kw-8">
+                      <i class="fa fa-github-alt"></i>
+                      {/* <ion-icon name="logo-github"></ion-icon> */}
+                      Github
+                    </a>
+                    <a href="https://angel.co/u/katherine-wu-18">
+                      <i class="fa fa-angellist"></i>
+                      Angellist
+                    </a>
+                    <a onClick={this.handleLogout}>
+                      <ion-icon name="log-out-outline"></ion-icon>
+                      Logout
+                    </a>
                   </div>
                 </div>
               </div>
