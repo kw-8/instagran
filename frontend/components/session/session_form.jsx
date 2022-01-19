@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { removeSessionErrors } from "../../actions/session_actions";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -70,7 +69,7 @@ class SessionForm extends React.Component {
         </div>
         <div>
           {otherFormText}
-          <Link to={otherFormLink} onClick={() => dispatch(removeSessionErrors())}>{otherFormName}</Link>
+          <Link to={otherFormLink} onClick={this.props.removeSessionErrors}>{otherFormName}</Link>
         </div>
       </div>
     )
