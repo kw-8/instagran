@@ -5,6 +5,7 @@ import Root from './components/root'
 // import * as sessionActions from './actions/session_actions'
 // import * as postActions from './actions/post_actions'
 // import * as likeActions from './actions/like_actions'
+// import * as followActions from './actions/follow_actions'
 
 document.addEventListener('DOMContentLoaded', () =>{
   const root = document.getElementById('root');
@@ -23,11 +24,12 @@ document.addEventListener('DOMContentLoaded', () =>{
     store = configureStore();
   }
 
-  window.store = store;
+  // window.store = store;
   window.getState = store.getState;
   // window.dispatch = store.dispatch;
   // window.sessionActions = sessionActions;
   // window.postActions = postActions;
   // window.likeActions = likeActions;
+  // window.followActions = followActions;
   ReactDOM.render(<Root store={store} />, root);
 })
