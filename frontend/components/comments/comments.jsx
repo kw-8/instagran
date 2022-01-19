@@ -13,14 +13,14 @@ class Comments extends React.Component {
   }
 
   toggleCommentDropdown(commentId) {
-    e.preventDefault();
-    let menu = document.querySelector(`.comment-${commentId} .comment-dropdown`);
-    if (menu.style['visibility'] && menu.style['visibility'] === "hidden") {
+    let menu = document.querySelector(`.comment-${commentId} > .dots > .comment-dropdown`);
+    
+    if (window.getComputedStyle(menu, null).getPropertyValue('visibility') && window.getComputedStyle(menu, null).getPropertyValue('visibility') === "hidden") {
       setUpClickAway(`.comment-${commentId} .toggle-button`, `.comment-${commentId} .dropdown`);
       menu.setAttribute('style', 'visibility: visible');
     } else {
+      menu.setAttribute('style', 'visibility: hidden');
       removeClickAway(`.comment-${commentId} .toggle-button`, `.comment-${commentId} .dropdown`);
-      // menu.setAttribute('style', 'visibility: hidden');
     }
   }
 
@@ -46,7 +46,6 @@ class Comments extends React.Component {
 
   render() {
     const { comments, currentUserId } = this.props
-
     return (
       <>
       <ul>
