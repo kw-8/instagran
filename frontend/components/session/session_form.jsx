@@ -24,7 +24,11 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.submitForm(user);
+    if (this.props.formType === 'login') {
+      this.props.submitLoginForm(user);
+    } else {
+      this.props.submitSignupForm(user);
+    }
   }
 
   render() {
@@ -60,8 +64,8 @@ class SessionForm extends React.Component {
           <div className="session-errors">
             <p>{this.props.errors ? this.props.errors.map(error => <li>{error}</li>) : null}</p>
           </div>
-          <form>
-            <button className='demo-login' onClick={() => this.props.submitForm({username: 'super_grandma', password: 'supersuper'})}>Login with super_grandma</button>
+            <form>
+            <button className='demo-login' onClick={() => this.props.submitLoginForm({username: 'super_grandma', password: 'supersuper'})}>Login with super_grandma</button>
           </form>
         </div>
         <div>
