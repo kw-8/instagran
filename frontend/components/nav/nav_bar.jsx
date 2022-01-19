@@ -22,7 +22,7 @@ class NavBar extends React.Component {
   toggleNavMenu(e) {
     e.preventDefault()
     let menu = document.querySelector('.nav-dropdown-menu');
-    if (menu.style['visibility'] && menu.style['visibility'] === "hidden") {
+    if (!menu.style['visibility'] || menu.style['visibility'] === "hidden") {
       menu.setAttribute('style', 'visibility: visible');
       setUpClickAway('.profile-picture.dropdown-button img, .profile-picture.dropdown-button div', '.nav-dropdown-menu')
     } else {
@@ -87,13 +87,6 @@ class NavBar extends React.Component {
             </>
           }
         </div>
-
-        {/* {
-          document.addEventListener('click', (e) => {
-            console.log(e.target.matches('ul'))
-            // Array.from(document.getElementsByClassName('dropdown')).map((dropdown, i) => console.log(i))
-          })
-        } */}
       </div>
     )
   }

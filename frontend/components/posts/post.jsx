@@ -35,7 +35,7 @@ class Post extends React.Component {
   togglePostDropdown(e) {
     e.preventDefault()
     let menu = document.querySelector(`.post-dropdown.post-${this.props.postId} > div`);
-    if (menu.style['visibility'] && menu.style['visibility'] === "hidden") {
+    if (!menu.style['visibility'] || menu.style['visibility'] === "hidden") {
       menu.setAttribute('style', 'visibility: visible');
       setUpClickAway(`.post-${this.props.postId} .dropdown-button`, `.post-${this.props.postId} .dropdown`)
     } else {
