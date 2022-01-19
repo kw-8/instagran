@@ -31,8 +31,8 @@ const App = () => (
 
     <ProtectedRoute exact path="/posts/:postId" component={EditPostContainer} />
     
-    <Route exact path="/user/:userId" component={UserProfileContainer} />
-    <Route exact path="/posts/:postId" component={PostContainer} />
+    <ProtectedRoute exact path="/user/:userId" component={UserProfileContainer} />
+    <ProtectedRoute exact path="/posts/:postId" component={PostContainer} />
   </div>
 );
 
