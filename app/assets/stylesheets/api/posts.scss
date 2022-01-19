@@ -66,7 +66,7 @@ $round-corner: 3px;
   box-sizing: border-box;
   max-width: 800px;
   max-height: calc(min(1200px, 60vw));
-  height: calc(min(1200px, 60vw));
+  height: min(80vh, 60vw);
   
   display: flex;
   flex-direction: row;
