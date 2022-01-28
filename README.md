@@ -4,6 +4,7 @@
 * [Live site](https://insta-gran.herokuapp.com)
 
 ## Intro
+![profile](https://github.com/kw-8/instagran/blob/master/app/assets/images/ss_ig.png)
 
 ## Technologies Used
 ### Frontend
