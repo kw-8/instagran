@@ -3,6 +3,10 @@
   <head>
     <title>Instagran</title>
     <%= csrf_meta_tags %>
+    <meta property="og:image"       content="<%= image_url('https://github.com/kw-8/instagran/blob/master/app/assets/images/ss_ig.png?raw=true') %>">
+    <meta property="og:description" content="A grandparent-themed Instagram clone, built with Ruby on Rails and React.">
+    <meta property="og:url"         content="https://insta-gran.herokuapp.com">
+
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
